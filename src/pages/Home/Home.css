@@ -1,0 +1,4 @@
+.bg-image {
+    background: url("../../assets/cake-1.jpg") center center / cover no-repeat;
+    height: 60vh;
+}
