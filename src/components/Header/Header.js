@@ -65,7 +65,7 @@ const Header = () => {
           {showMenu && <BackDrop />}
 
           {showMenu && (
-            <div className="bg-[#262626] absolute top-0 right-0 bottom-0 w-1/2 h-screen z-10 md:hidden">
+            <div className="bg-[#262626] absolute top-0 right-0 bottom-0 w-9/12 h-screen z-10 md:hidden">
 
               <div className="relative p-5">
                 <AiOutlineClose size={24} color="white" style={{ marginLeft: "auto" }} onClick={() => setShowMenu(false)} />
