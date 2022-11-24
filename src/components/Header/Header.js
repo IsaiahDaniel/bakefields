@@ -10,17 +10,16 @@ const Header = () => {
         <nav className="flex items-center justify-between">
           <div className="flex items-center">
             <h2 className="text-2xl mr-10">cake</h2>
-            <div className="flex items-center rounded border pl-3 pt-5 pb-5 w-8/12">
+            <div className="flex items-center rounded border pl-3 pt-5 pb-5 w-full md:w-[700px]">
               <div className="mr-3">
                 <AiOutlineSearch />
               </div>
-              <form action="">
-                <input
-                  type="text"
-                  className="bg-transparent outline-none w-[80%]"
-                  placeholder="Search Cakes"
-                />
-              </form>
+
+              <input
+                type="text"
+                className="bg-transparent outline-none w-full"
+                placeholder="Search Cakes"
+              />
             </div>
           </div>
 
