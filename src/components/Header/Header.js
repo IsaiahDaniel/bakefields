@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import BackDrop from "../BackDrop/BackDrop";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import { AiFillFacebook, AiOutlineInstagram, AiOutlineWhatsApp } from "react-icons/ai";
+import { FcAbout } from "react-icons/fc";
 
 const Header = () => {
 
@@ -86,6 +87,15 @@ const Header = () => {
                     <div className="flex items-center">
                       <SiCakephp size={24} style={{ marginRight: 10 }} />
                       <p>Products</p>
+                    </div>
+                  </Link>
+                </li>
+
+                <li className="mb-5" onClick={() => setShowMenu(false)}>
+                  <Link to="/products">
+                    <div className="flex items-center">
+                      <FcAbout size={24} color="white" style={{ marginRight: 10 }} />
+                      <p>About Us</p>
                     </div>
                   </Link>
                 </li>

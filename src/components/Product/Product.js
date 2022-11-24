@@ -2,8 +2,6 @@ import React from "react";
 import Rating from "../Rating/Rating";
 
 const Product = ({ product }) => {
-  console.log("title", product);
-
   return (
     <div>
       <div className="shadow-md md:justify-start justify-center">
