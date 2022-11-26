@@ -70,7 +70,7 @@ const Home = () => {
 
   const Showcase = () => {
     return (
-      <section className="flex-col-reverse md:flex md:flex-row items-center justify-between mt-10 pl-[40px]">
+      <section className="flex-col-reverse md:flex md:flex-row items-center justify-between mt-10 pl-[18px]">
 
         <div className="mr-5 mb-10 md:mb-0 mx-auto">
           <img src={Banner} alt="" style={{ width: "100%" }} />
