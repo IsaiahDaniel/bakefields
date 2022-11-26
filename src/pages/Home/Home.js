@@ -109,21 +109,6 @@ const Home = () => {
     );
   };
 
-  const Categories = () => {
-    return (
-      <section className="my-[60px]">
-        <h1 className="text-3xl text-center">Shop By category</h1>
-        <div className="flex items-center md:justify-between justify-center">
-          {CATEGORIES_LIST.map((category) => (
-            <div key={category.id} className="cursor-grab overflow-hidden bg-red-700">
-              <img src={category.image} alt="" style={{ width: "300px", height: "300px" }} />
-              <h2>{category.category}</h2>
-            </div>
-          ))}
-        </div>
-      </section>
-    );
-  };
 
   const ProductsList = () => {
     return (
