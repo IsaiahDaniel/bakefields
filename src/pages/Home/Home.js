@@ -2,7 +2,6 @@ import React from "react";
 import { Button, Product } from "../../components";
 import Banner from "../../assets/banner.png";
 import Refer from "../../assets/refer-and-earn.png";
-import Refer2 from "../../assets/refer-and-earn-new-dimension.png";
 import Bite from "../../assets/love-at-first bite.png";
 
 import "./Home.css";
