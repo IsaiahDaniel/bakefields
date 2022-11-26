@@ -4,6 +4,8 @@ import { Button, Product } from "../../components";
 import MakeList from "../../assets/Make-a-list.jpeg";
 import Banner from "../../assets/banner.png";
 import Refer from "../../assets/refer-and-earn.png";
+import Bite from "../../assets/love-at-first bite.png";
+
 
 import "./Home.css";
 
@@ -129,7 +131,7 @@ const Home = () => {
         </div>
 
         <div className="mr-10 flex justify-between md:flex-col">
-          <img src={MakeList} alt="" className="w-[230px] md:w-[260px]" />
+          <img src={Bite} alt="" className="w-[230px] md:w-[260px]" />
           <br />
           <img src={Refer} alt="" className="w-[230px] md:w-[260px]" />
         </div>
@@ -179,6 +181,9 @@ const Home = () => {
       <div>
         {Categories()}
         {ProductsList()}
+
+        <h4>hello</h4>
+
       </div>
     </div>
   );

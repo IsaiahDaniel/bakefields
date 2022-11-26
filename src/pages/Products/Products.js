@@ -52,14 +52,18 @@ const Products = () => {
         
         <div className="pl-5 pr-5">
           <select
-            id="countries"
+            id="category"
             class="bg-gray-50 border border-gray-300 pt-6 pb-6 mr-10 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
           >
-            <option selected>Choose a country</option>
-            <option value="US">United States</option>
-            <option value="CA">Canada</option>
-            <option value="FR">France</option>
-            <option value="DE">Germany</option>
+            <option selected>Choose a Category</option>
+            <option value="birthdays">Birthdays</option>
+            <option value="children">Children</option>
+            <option value="buttercream">Buttercream</option>
+            <option value="dessert">Dessert</option>
+            <option value="wedding">Wedding</option>
+            <option value="sport-lover">Sport Lover</option>
+            <option value="christmas">Christmas</option>
+            <option value="pasteries">Pasteries</option>
           </select>
         </div>
 
