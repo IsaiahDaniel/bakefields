@@ -16,7 +16,7 @@ const Header = () => {
     <div className="shadow-lg w-full">
       <header className="container mx-auto">
         <nav className="flex items-center justify-between">
-          <div className="flex items-center">
+          <div className="flex items-center mr-10 md:mr-0">
             <div>
               <img src={logo} alt="" style={{ width: "130px" }} />
             </div>
@@ -61,7 +61,7 @@ const Header = () => {
           </ul>
 
 
-          <div className="md:hidden" onClick={() => setShowMenu(true)}>
+          <div className="md:hidden pr-5" onClick={() => setShowMenu(true)}>
             <AiOutlineMenu size={34} />
           </div>
 
