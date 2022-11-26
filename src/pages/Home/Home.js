@@ -2,6 +2,7 @@ import React from "react";
 import { Button, Product } from "../../components";
 import Banner from "../../assets/banner.png";
 import Refer from "../../assets/refer-and-earn.png";
+import Refer2 from "../../assets/refer-and-earn-new-dimension.png";
 import Bite from "../../assets/love-at-first bite.png";
 
 import "./Home.css";
@@ -73,12 +74,13 @@ const Home = () => {
       <section className="flex-col-reverse md:flex md:flex-row items-center justify-between my-[60px] pl-[18px]">
 
         <div className="mr-5 mb-3 md:mb-0 mx-auto">
-          <img src={Banner} alt="" style={{ width: "100%" }} className='md:w-[100%] md:h-[100%]' />
+          <img src={Banner} alt="" style={{ width: "100%" }} className='md:w-[100%] md:h-[100%] shadow-lg' />
         </div>
 
         <div className="mr-10 flex justify-between md:flex-col">
-          <img src={Bite} alt="" className="w-[50%] mb-3 mr-3 md:w-[260px]" />
-          <img src={Refer} alt="" className="w-[48%] md:w-[260px]" />
+          <img src={Bite} alt="" className="w-[50%] mb-3 mr-3 md:w-[260px] shadow-md" />
+          <img src={Bite} alt="" className="w-[50%] mb-3 mr-3 md:w-[260px] shadow-md" />
+          {/* <img src={Refer2} alt="" className="w-[45%] md:w-[260px] shadow-md" /> */}
         </div>
 
       </section>
@@ -90,12 +92,12 @@ const Home = () => {
       <section className="my-[60px]">
         <h1 className="text-3xl text-center">Shop By category</h1>
         <div className="flex items-center md:justify-between justify-center flex-wrap">
-            {CATEGORIES_LIST.map((category) => (
-              <div key={category.id}>
-                <img src={category.image} alt="" style={{ width: "300px", height: "300px" }} />
-                <h2>{category.category}</h2>
-              </div>
-            ))}
+          {CATEGORIES_LIST.map((category) => (
+            <div key={category.id}>
+              <img src={category.image} alt="" style={{ width: "300px", height: "300px" }} />
+              <h2>{category.category}</h2>
+            </div>
+          ))}
         </div>
       </section>
     );
@@ -124,6 +126,13 @@ const Home = () => {
       <div>
         {Categories()}
         {ProductsList()}
+
+        <div className="flex mb-10 mr-10">
+          <img src={Bite} alt="" className="mr-10" />
+
+          <img src={Refer} alt="" />
+        </div>
+
       </div>
     </div>
   );
