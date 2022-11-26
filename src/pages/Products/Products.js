@@ -49,11 +49,13 @@ const Products = () => {
   return (
     <div className="container mx-auto">
       <div className="flex-col md:flex md:flex-row justify-center items-center mt-10">
-        
+
+          {/* dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 */}
+
         <div className="pl-5 pr-5">
           <select
             id="category"
-            class="bg-gray-50 border border-gray-300 pt-6 pb-6 mr-10 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            class="bg-gray-50 border border-gray-300 pt-6 pb-6 mr-10 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
           >
             <option selected>Choose a Category</option>
             <option value="birthdays">Birthdays</option>
@@ -67,7 +69,7 @@ const Products = () => {
           </select>
         </div>
 
-        <div className="flex items-center justify-center rounded border pl-3 pt-5 pb-5 w-8/12 pr-5 mt-5 md:ml-36">
+        {/* <div className="flex items-center justify-center rounded border pl-3 pt-5 pb-5 w-8/12 pr-5 mt-5 md:ml-36">
           <div className="mr-3">
             <AiOutlineSearch />
           </div>
@@ -77,10 +79,12 @@ const Products = () => {
             className="bg-transparent outline-none w-full h-max"
             placeholder="Search Cakes"
           />
-        </div>
+        </div> */}
+
         
       </div>
-      <div className="flex items-center md:justify-between justify-center flex-wrap mt-32">
+      <h2 className="text-2xl text-center mt-5">Our cakes</h2>
+      <div className="flex items-center md:justify-between justify-center flex-wrap mt-5">
         {PRODUCTS_LIST.map((product) => (
           <div className="mb-10">
             <Product product={product} key={product.id} />
