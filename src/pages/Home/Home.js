@@ -73,7 +73,7 @@ const Home = () => {
       <section className="flex-col-reverse md:flex md:flex-row items-center justify-between mt-10 pl-[18px]">
 
         <div className="mr-5 mb-10 md:mb-0 mx-auto">
-          <img src={Banner} alt="" style={{ width: "100%" }} className='w-[400px] h-[200px] md:w-[100%] md:h-[100%]' />
+          <img src={Banner} alt="" style={{ width: "100%" }} className='h-[200px] md:w-[100%] md:h-[100%]' />
         </div>
 
         <div className="mr-10 flex justify-between md:flex-col">
