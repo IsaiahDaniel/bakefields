@@ -1,6 +1,6 @@
 import React from "react";
 import { Button, Product } from "../../components";
-import { AiOutlineSearch } from "react-icons/ai";
+// import { AiOutlineSearch } from "react-icons/ai";
 
 const Products = () => {
   const PRODUCTS_LIST = [
