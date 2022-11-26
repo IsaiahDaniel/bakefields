@@ -77,9 +77,9 @@ const Home = () => {
         </div>
 
         <div className="mr-10 flex justify-between md:flex-col">
-          <img src={Bite} alt="" className="w-[50%] mr-6 md:w-[260px]" />
+          <img src={Bite} alt="" className="w-[52%] mr-6 md:w-[260px]" />
           <br />
-          <img src={Refer} alt="" className="w-[50%] md:w-[260px]" />
+          <img src={Refer} alt="" className="w-[52%] md:w-[260px]" />
         </div>
 
       </section>
