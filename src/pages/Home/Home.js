@@ -3,6 +3,7 @@ import { Button, Product } from "../../components";
 import Banner from "../../assets/banner.png";
 // import Refer from "../../assets/refer-and-earn.png";
 import Bite from "../../assets/love-at-first bite.png";
+import Carousel from "react-elastic-carousel";
 
 import "./Home.css";
 
@@ -65,7 +66,29 @@ const Home = () => {
       id: 3,
       category: "naming",
       image: require("../../assets/wedding.jpeg"),
-    }
+    },
+    {
+      id: 4,
+      category: "naming",
+      image: require("../../assets/wedding.jpeg"),
+    },
+    {
+      id: 5,
+      category: "naming",
+      image: require("../../assets/wedding.jpeg"),
+    },
+    {
+      id: 3,
+      category: "naming",
+      image: require("../../assets/wedding.jpeg"),
+    },
+  ];
+
+  const breakPoints = [
+    { width: 1, itemsToShow: 1 },
+    { width: 550, itemsToShow: 2 },
+    { width: 768, itemsToShow: 3 },
+    { width: 1200, itemsToShow: 4 },
   ];
 
   const Showcase = () => {
@@ -90,9 +113,9 @@ const Home = () => {
     return (
       <section className="my-[60px]">
         <h1 className="text-3xl text-center">Shop By category</h1>
-        <div className="flex items-center md:justify-between justify-center flex-wrap">
+        <div className="flex items-center md:justify-between justify-center">
           {CATEGORIES_LIST.map((category) => (
-            <div key={category.id}>
+            <div key={category.id} className="cursor-grab overflow-hidden bg-red-700">
               <img src={category.image} alt="" style={{ width: "300px", height: "300px" }} />
               <h2>{category.category}</h2>
             </div>
@@ -118,12 +141,27 @@ const Home = () => {
     );
   };
 
+  const renderCarousel = () => {
+    return (
+      <section className="my-[60px]">
+        <h1 className="text-3xl text-center">Shop By category</h1>
+        <div className="flex items-center md:justify-between justify-center">
+          <Carousel breakPoints={breakPoints}>
+            {CATEGORIES_LIST.map((category) => (
+              <img src={category.image} alt="" style={{ width: "300px", height: "300px", marginRight: "40px" }} />
+            ))}
+          </Carousel>
+        </div>
+      </section>
+    )
+  }
+
   return (
     <div className="container mx-auto">
       {Showcase()}
 
       <div>
-        {Categories()}
+        {renderCarousel()}
         {ProductsList()}
       </div>
     </div>
