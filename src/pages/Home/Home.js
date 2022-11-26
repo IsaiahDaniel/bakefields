@@ -70,16 +70,15 @@ const Home = () => {
 
   const Showcase = () => {
     return (
-      <section className="flex-col-reverse md:flex md:flex-row items-center justify-between mt-10 pl-[18px]">
+      <section className="flex-col-reverse md:flex md:flex-row items-center justify-between my-[60px] pl-[18px]">
 
-        <div className="mr-5 md:mb-0 mx-auto">
+        <div className="mr-5 mb-3 md:mb-0 mx-auto">
           <img src={Banner} alt="" style={{ width: "100%" }} className='md:w-[100%] md:h-[100%]' />
         </div>
 
         <div className="mr-10 flex justify-between md:flex-col">
-          <img src={Bite} alt="" className="w-[52%] mr-6 md:w-[260px]" />
-          <br />
-          <img src={Refer} alt="" className="w-[52%] md:w-[260px]" />
+          <img src={Bite} alt="" className="w-[50%] mb-3 mr-3 md:w-[260px]" />
+          <img src={Refer} alt="" className="w-[48%] md:w-[260px]" />
         </div>
 
       </section>
@@ -88,7 +87,7 @@ const Home = () => {
 
   const Categories = () => {
     return (
-      <section className="my-[150px]">
+      <section className="my-[60px]">
         <h1 className="text-3xl text-center">Shop By category</h1>
         <div className="flex items-center md:justify-between justify-center flex-wrap">
             {CATEGORIES_LIST.map((category) => (
@@ -104,7 +103,7 @@ const Home = () => {
 
   const ProductsList = () => {
     return (
-      <section className="container mx-auto mt-20">
+      <section className="container mx-auto my-[60px]">
         <h2 className="text-4xl text-center mt-10 mb-10">Top Selling Products</h2>
         <div className="flex items-center md:justify-between justify-center  flex-wrap">
           {PRODUCTS_LIST.map((product) => (
