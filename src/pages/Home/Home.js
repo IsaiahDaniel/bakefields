@@ -1,7 +1,5 @@
 import React from "react";
-import Slider from "react-slick";
 import { Button, Product } from "../../components";
-import MakeList from "../../assets/Make-a-list.jpeg";
 import Banner from "../../assets/banner.png";
 import Refer from "../../assets/refer-and-earn.png";
 import Bite from "../../assets/love-at-first bite.png";
@@ -71,57 +69,6 @@ const Home = () => {
     }
   ];
 
-  let settings = {
-    dots: true,
-    autoplay: true,
-    autoplaySpeed: 4000,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-  };
-
-  var categorySettings = {
-    dots: true,
-    infinite: false,
-    speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 4,
-    initialSlide: 0,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
-          infinite: true,
-          dots: true
-        }
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-          initialSlide: 2
-        }
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1
-        }
-      }
-    ]
-  };
-
-  {/* <Slider {...settings}>
-          <div>
-            <img src={Banner} alt="" style={{ width: "100%" }} />
-          </div>
-        </Slider> */}
-
   const Showcase = () => {
     return (
       <section className="flex-col-reverse md:flex md:flex-row items-center justify-between mt-10">
@@ -145,14 +92,12 @@ const Home = () => {
       <section className="my-[150px]">
         <h1 className="text-3xl text-center">Shop By category</h1>
         <div className="flex items-center md:justify-between justify-center flex-wrap">
-          <Slider {...categorySettings}>
             {CATEGORIES_LIST.map((category) => (
               <div key={category.id}>
                 <img src={category.image} alt="" style={{ width: "300px", height: "300px" }} />
                 <h2>{category.category}</h2>
               </div>
             ))}
-          </Slider>
         </div>
       </section>
     );
