@@ -6,6 +6,7 @@ import BackDrop from "../BackDrop/BackDrop";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import { AiFillFacebook, AiOutlineInstagram, AiOutlineWhatsApp } from "react-icons/ai";
 import { FcAbout } from "react-icons/fc";
+import logo from "../../assets/logo.png";
 
 const Header = () => {
 
@@ -13,11 +14,13 @@ const Header = () => {
 
   return (
     <div className="shadow-lg w-full">
-      <header className="container mx-auto p-5">
+      <header className="container mx-auto">
         <nav className="flex items-center justify-between">
           <div className="flex items-center">
-            <h2 className="text-2xl mr-10">cake</h2>
-            <div className="flex items-center rounded border pl-3 pt-5 pb-5 w-full md:w-[700px]">
+            <div>
+              <img src={logo} alt="" style={{ width: "130px" }} />
+            </div>
+            <div className="flex items-center rounded border pl-3 pt-3 pb-3 w-full md:w-[400px]">
               <div className="mr-3">
                 <AiOutlineSearch />
               </div>

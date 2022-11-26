@@ -1,6 +1,9 @@
 import React from "react";
 import Slider from "react-slick";
 import { Button, Product } from "../../components";
+import MakeList from "../../assets/Make-a-list.jpeg";
+import Banner from "../../assets/banner.png";
+import Refer from "../../assets/refer-and-earn.png";
 
 import "./Home.css";
 
@@ -76,22 +79,61 @@ const Home = () => {
     slidesToScroll: 1,
   };
 
+  var categorySettings = {
+    dots: true,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 4,
+    initialSlide: 0,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
+  };
+
+  {/* <Slider {...settings}>
+          <div>
+            <img src={Banner} alt="" style={{ width: "100%" }} />
+          </div>
+        </Slider> */}
+
   const Showcase = () => {
     return (
-      <section>
-        <Slider {...settings}>
-          <div className="bg-image">
-            <div className="container mx-auto mt-10">
-              <h3>Welcome to cake pastery</h3>
-            </div>
-          </div>
+      <section className="flex-col-reverse md:flex md:flex-row items-center justify-between mt-10">
 
-          <div>
-            <div className="container mx-auto mt-10">
-              <h3>The Best Pastery in Lagos</h3>
-            </div>
-          </div>
-        </Slider>
+        <div className="mr-5 mb-10 md:mb-0">
+          <img src={Banner} alt="" style={{ width: "100%" }} />
+        </div>
+
+        <div className="mr-10 flex justify-between md:flex-col">
+          <img src={MakeList} alt="" className="w-[230px] md:w-[260px]" />
+          <br />
+          <img src={Refer} alt="" className="w-[230px] md:w-[260px]" />
+        </div>
+
       </section>
     );
   };
@@ -100,21 +142,15 @@ const Home = () => {
     return (
       <section className="my-[150px]">
         <h1 className="text-3xl text-center">Shop By category</h1>
-        {/* <div className="flex-col justify-center md:flex md:flex-row items-center md:justify-between">
-          {CATEGORIES_LIST.map((category) => (
-            <div key={category.id}>
-              <img src={category.image} alt="" style={{ width: "300px", height: "300px" }} />
-              <h2>{category.category}</h2>
-            </div>
-          ))}
-        </div> */}
         <div className="flex items-center md:justify-between justify-center flex-wrap">
-          {CATEGORIES_LIST.map((category) => (
-            <div key={category.id}>
-              <img src={category.image} alt="" style={{ width: "300px", height: "300px" }} />
-              <h2>{category.category}</h2>
-            </div>
-          ))}
+          <Slider {...categorySettings}>
+            {CATEGORIES_LIST.map((category) => (
+              <div key={category.id}>
+                <img src={category.image} alt="" style={{ width: "300px", height: "300px" }} />
+                <h2>{category.category}</h2>
+              </div>
+            ))}
+          </Slider>
         </div>
       </section>
     );
