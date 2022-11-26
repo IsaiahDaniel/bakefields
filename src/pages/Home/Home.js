@@ -125,13 +125,6 @@ const Home = () => {
       <div>
         {Categories()}
         {ProductsList()}
-
-        <div className="flex mb-10 mr-10">
-          <img src={Bite} alt="" className="mr-10" />
-
-          <img src={Refer} alt="" />
-        </div>
-
       </div>
     </div>
   );
