@@ -72,7 +72,7 @@ const Home = () => {
     return (
       <section className="flex-col-reverse md:flex md:flex-row items-center justify-between mt-10 pl-[18px]">
 
-        <div className="mr-5 mb-10 md:mb-0 mx-auto">
+        <div className="mr-5 mb-5 md:mb-0 mx-auto">
           <img src={Banner} alt="" style={{ width: "100%" }} className='md:w-[100%] md:h-[100%]' />
         </div>
 
