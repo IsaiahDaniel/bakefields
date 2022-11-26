@@ -72,14 +72,14 @@ const Home = () => {
 
   const Showcase = () => {
     return (
-      <section className="flex-col-reverse md:flex md:flex-row items-center justify-between mt-10">
+      <section className="flex-col-reverse md:flex md:flex-row items-center justify-between mt-10 pl-[40px]">
 
         <div className="mr-5 mb-10 md:mb-0 mx-auto">
           <img src={Banner} alt="" style={{ width: "100%" }} />
         </div>
 
         <div className="mr-10 flex justify-between md:flex-col">
-          <img src={Bite} alt="" className="w-[50%] md:w-[260px]" />
+          <img src={Bite} alt="" className="w-[50%] mr-6 md:w-[260px]" />
           <br />
           <img src={Refer} alt="" className="w-[50%] md:w-[260px]" />
         </div>
