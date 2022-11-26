@@ -14,7 +14,7 @@ const Register = () => {
 
         <div className='flex-1 bg-[#FCFCFC] h-screen p-10 w-full md:w-[60%] mb-10'>
             <div className='w-full md:w-[60%] mx-auto'>
-                <h2 className='text-4xl text-center font-bold'>Sign up for to Tastery</h2>
+                <h2 className='text-4xl text-center font-bold'>Sign up for to Midbite</h2>
                 <h3 className='text-center mt-5'>Create Your Account</h3>
 
                 <form>
