@@ -4,6 +4,7 @@ import Banner from "../../assets/banner.png";
 import Refer from "../../assets/refer-and-earn.png";
 import Bite from "../../assets/love-at-first bite.png";
 
+import { motion } from "framer-motion";
 
 import "./Home.css";
 
@@ -73,14 +74,14 @@ const Home = () => {
     return (
       <section className="flex-col-reverse md:flex md:flex-row items-center justify-between mt-10">
 
-        <div className="mr-5 mb-10 md:mb-0">
+        <div className="mr-5 mb-10 md:mb-0 mx-auto">
           <img src={Banner} alt="" style={{ width: "100%" }} />
         </div>
 
         <div className="mr-10 flex justify-between md:flex-col">
-          <img src={Bite} alt="" className="w-[230px] md:w-[260px]" />
+          <img src={Bite} alt="" className="w-[50%] md:w-[260px]" />
           <br />
-          <img src={Refer} alt="" className="w-[230px] md:w-[260px]" />
+          <img src={Refer} alt="" className="w-[50%] md:w-[260px]" />
         </div>
 
       </section>
@@ -126,9 +127,6 @@ const Home = () => {
       <div>
         {Categories()}
         {ProductsList()}
-
-        <h4>hello</h4>
-
       </div>
     </div>
   );
