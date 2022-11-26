@@ -4,8 +4,6 @@ import Banner from "../../assets/banner.png";
 import Refer from "../../assets/refer-and-earn.png";
 import Bite from "../../assets/love-at-first bite.png";
 
-import { motion } from "framer-motion";
-
 import "./Home.css";
 
 const Home = () => {
