@@ -11,7 +11,7 @@ const Button = ({ text, primary, inputType }) => {
 }
 
   return (
-    <button className='flex pl-5 pr-5 ptb-5 rounded border mt-4 border-red-500 text-red-600 hover:bg-red-700 hover:text-white' type={inputType}>
+    <button className='flex pl-5 pr-5 ptb-10 rounded border mt-4 border-red-500 text-red-600 hover:bg-red-700 hover:text-white' type={inputType}>
         { text }
     </button>
   )

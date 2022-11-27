@@ -1,7 +1,7 @@
 import React from "react";
 import { Button, Product } from "../../components";
 import Banner from "../../assets/banner.png";
-// import Refer from "../../assets/refer-and-earn.png";
+import Refer from "../../assets/refer-and-earn.png";
 import Bite from "../../assets/love-at-first bite.png";
 import Carousel from "react-elastic-carousel";
 
@@ -47,40 +47,40 @@ const Home = () => {
       title: "New Cake",
       description:
         "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum, quis veniam! Blanditiis perspiciatis quas, modi molestias, tempore aliquid nihil id commodi incidunt veritatis explicabo aut laborum, animi quidem obcaecati dicta!",
-      image: require("../../assets/cake-2.jpg"),
-    },
+      image: require("../../assets/val-double-delight.png"),
+    }
   ];
 
   const CATEGORIES_LIST = [
     {
       id: 1,
       category: "birthday",
-      image: require("../../assets/birthday.jpeg"),
+      image: require("../../assets/1.jpeg"),
     },
     {
       id: 2,
       category: "Wedding",
-      image: require("../../assets/naming.jpeg"),
+      image: require("../../assets/2.jpeg"),
     },
     {
       id: 3,
       category: "naming",
-      image: require("../../assets/wedding.jpeg"),
+      image: require("../../assets/3.jpeg"),
     },
     {
       id: 4,
       category: "naming",
-      image: require("../../assets/wedding.jpeg"),
+      image: require("../../assets/1.jpeg"),
     },
     {
       id: 5,
       category: "naming",
-      image: require("../../assets/wedding.jpeg"),
+      image: require("../../assets/2.jpeg"),
     },
     {
       id: 3,
       category: "naming",
-      image: require("../../assets/wedding.jpeg"),
+      image: require("../../assets/3.jpeg"),
     },
   ];
 
@@ -93,15 +93,15 @@ const Home = () => {
 
   const Showcase = () => {
     return (
-      <section className="flex-col-reverse md:flex md:flex-row items-center justify-between my-[60px] pl-[18px]">
+      <section className="flex-col-reverse md:flex md:flex-row items-center justify-between my-[10px] pl-[18px]">
 
         <div className="mr-5 mb-3 md:mb-0 mx-auto">
-          <img src={Banner} alt="" style={{ width: "100%" }} className='md:w-[100%] md:h-[100%] shadow-lg' />
+          <img src={Banner} alt="" style={{ width: "100%" }} className='md:w-[100%] md:h-[100%] shadow-lg rounded-lg' />
         </div>
 
-        <div className="mr-10 flex justify-between md:flex-col">
-          <img src={Bite} alt="" className="w-[50%] mb-3 mr-3 md:w-[260px] shadow-md" />
-          <img src={Bite} alt="" className="w-[50%] mb-3 mr-3 md:w-[260px] shadow-md" />
+        <div className="mr-10 flex justify-between md:flex-col mt-3">
+          <img src={Bite} alt="" className="w-[50%] mb-3 mr-3 md:w-[260px] shadow-md rounded-lg" />
+          <img src={Refer} alt="" className="w-[50%] mb-3 mr-3 md:w-[260px] shadow-md rounded-lg" />
         </div>
 
       </section>
@@ -111,7 +111,7 @@ const Home = () => {
 
   const ProductsList = () => {
     return (
-      <section className="container mx-auto my-[60px]">
+      <section className="container mx-auto my-[10px]">
         <h2 className="text-4xl text-center mt-10 mb-10">Top Selling Products</h2>
         <div className="flex items-center md:justify-between justify-center  flex-wrap">
           {PRODUCTS_LIST.map((product) => (
@@ -127,8 +127,8 @@ const Home = () => {
 
   const renderCarousel = () => {
     return (
-      <section className="my-[60px]">
-        <h1 className="text-3xl text-center">Shop By category</h1>
+      <section className="my-[10px]">
+        <h1 className="text-3xl text-center mb-5">Shop By category</h1>
         <div className="flex items-center md:justify-between justify-center">
           <Carousel breakPoints={breakPoints}>
             {CATEGORIES_LIST.map((category) => (

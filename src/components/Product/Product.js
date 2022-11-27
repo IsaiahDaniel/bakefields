@@ -1,9 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Rating from "../Rating/Rating";
 
 const Product = ({ product }) => {
   return (
-    <div>
+    <Link to={`/product/${product.id}`}>
       <div className="shadow-md md:justify-start justify-center">
         <img
           src={product.image}
@@ -14,7 +15,7 @@ const Product = ({ product }) => {
       <h3 className="font-bold">{product.title}</h3>
       <Rating />
       <h3>&#8358;{product.price}</h3>
-    </div>
+    </Link>
   );
 };
 
