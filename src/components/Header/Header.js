@@ -21,7 +21,7 @@ const Header = () => {
         <nav className="flex items-center justify-between">
           <div className="flex items-center mr-10 md:mr-0">
             <Link to="/" className="w-[200px]">
-              <img src={logo} alt="" style={{ width: "100%" }} className="object-cover" />
+              <img src={logo} alt="" style={{ width: "80%" }} className="object-cover" />
             </Link>
             <div className="md:flex items-center rounded border border-[#FEBD01] pl-3 pt-3 pb-3 w-full md:w-[400px] hidden">
               <div className="mr-3">
