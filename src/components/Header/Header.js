@@ -20,9 +20,9 @@ const Header = () => {
       <header className="container mx-auto">
         <nav className="flex items-center justify-between">
           <div className="flex items-center mr-10 md:mr-0">
-            <div className="w-[200px]">
+            <Link to="/" className="w-[200px]">
               <img src={logo} alt="" style={{ width: "100%" }} className="object-cover" />
-            </div>
+            </Link>
             <div className="md:flex items-center rounded border border-[#FEBD01] pl-3 pt-3 pb-3 w-full md:w-[400px] hidden">
               <div className="mr-3">
                 <AiOutlineSearch />
