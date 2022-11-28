@@ -17,13 +17,13 @@ const Header = () => {
 
   return (
     <div className="shadow-lg w-full">
-      <header className="container mx-auto pt-10 pb-10 md:pt-0 md:pb-0">
+      <header className="container mx-auto">
         <nav className="flex items-center justify-between">
           <div className="flex items-center mr-10 md:mr-0">
             <div className="w-[200px]">
               <img src={logo} alt="" style={{ width: "100%" }} className="object-cover" />
             </div>
-            <div className="flex items-center rounded border border-[#FEBD01] pl-3 pt-3 pb-3 w-full md:w-[400px]">
+            <div className="md:flex items-center rounded border border-[#FEBD01] pl-3 pt-3 pb-3 w-full md:w-[400px] hidden">
               <div className="mr-3">
                 <AiOutlineSearch />
               </div>
@@ -34,7 +34,7 @@ const Header = () => {
                 placeholder="Search Cakes"
               />
             </div>
-            <button className="border border-[#FEBD01] p-3 hover:bg-[#FEBD01] rounded">Search</button>
+            <button className="border border-[#FEBD01] p-3 hidden md:flex hover:bg-[#FEBD01] rounded">Search</button>
           </div>
 
           <ul className="hidden md:flex items-center justify-between">
