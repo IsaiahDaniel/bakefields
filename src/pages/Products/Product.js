@@ -69,7 +69,7 @@ const Product = () => {
 
   const renderProductDetail = () => {
     return (
-      <div className="mt-10 mb-10">
+      <div className="mt-10 mb-10 p-3 md:p-0">
         <div className="flex-col md:flex md:flex-row">
           <div className="mr-10">
             <img

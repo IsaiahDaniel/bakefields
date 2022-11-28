@@ -20,8 +20,8 @@ const Header = () => {
       <header className="container mx-auto pt-10 pb-10 md:pt-0 md:pb-0">
         <nav className="flex items-center justify-between">
           <div className="flex items-center mr-10 md:mr-0">
-            <div>
-              <img src={logo} alt="" style={{ width: "130px" }} />
+            <div className="w-[200px]">
+              <img src={logo} alt="" style={{ width: "100%" }} className="object-cover" />
             </div>
             <div className="flex items-center rounded border border-[#FEBD01] pl-3 pt-3 pb-3 w-full md:w-[400px]">
               <div className="mr-3">
