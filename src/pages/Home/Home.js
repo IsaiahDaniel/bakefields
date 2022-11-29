@@ -4,6 +4,7 @@ import Banner from "../../assets/banner.png";
 import Refer from "../../assets/refer-and-earn.png";
 import Bite from "../../assets/love-at-first bite.png";
 import Carousel from "react-elastic-carousel";
+import { AiOutlineSearch } from "react-icons/ai";
 
 import "./Home.css";
 
@@ -48,7 +49,7 @@ const Home = () => {
       description:
         "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum, quis veniam! Blanditiis perspiciatis quas, modi molestias, tempore aliquid nihil id commodi incidunt veritatis explicabo aut laborum, animi quidem obcaecati dicta!",
       image: require("../../assets/val-double-delight.png"),
-    }
+    },
   ];
 
   const CATEGORIES_LIST = [
@@ -94,25 +95,37 @@ const Home = () => {
   const Showcase = () => {
     return (
       <section className="flex-col-reverse md:flex md:flex-row items-center justify-between my-[10px] pl-[18px]">
-
         <div className="mr-5 mb-3 md:mb-0 mx-auto">
-          <img src={Banner} alt="" style={{ width: "100%" }} className='md:w-[100%] md:h-[100%] shadow-lg rounded-lg' />
+          <img
+            src={Banner}
+            alt=""
+            style={{ width: "100%" }}
+            className="md:w-[100%] md:h-[100%] shadow-lg rounded-lg"
+          />
         </div>
 
         <div className="mr-10 flex justify-between md:flex-col mt-3">
-          <img src={Bite} alt="" className="w-[50%] mb-3 mr-3 md:w-[260px] shadow-md rounded-lg" />
-          <img src={Refer} alt="" className="w-[50%] mb-3 mr-3 md:w-[260px] shadow-md rounded-lg" />
+          <img
+            src={Bite}
+            alt=""
+            className="w-[50%] mb-3 mr-3 md:w-[260px] shadow-md rounded-lg"
+          />
+          <img
+            src={Refer}
+            alt=""
+            className="w-[50%] mb-3 mr-3 md:w-[260px] shadow-md rounded-lg"
+          />
         </div>
-
       </section>
     );
   };
 
-
   const ProductsList = () => {
     return (
       <section className="container mx-auto my-[10px]">
-        <h2 className="text-4xl text-center mt-10 mb-10">Top Selling Products</h2>
+        <h2 className="text-4xl text-center mt-10 mb-10">
+          Top Selling Products
+        </h2>
         <div className="flex items-center md:justify-between justify-center  flex-wrap">
           {PRODUCTS_LIST.map((product) => (
             <div className="mb-10" key={product.id}>
@@ -132,16 +145,34 @@ const Home = () => {
         <div className="flex items-center md:justify-between justify-center">
           <Carousel breakPoints={breakPoints}>
             {CATEGORIES_LIST.map((category) => (
-              <img src={category.image} alt="" style={{ width: "300px", height: "300px", marginRight: "40px" }} />
+              <img
+                src={category.image}
+                alt=""
+                style={{ width: "300px", height: "300px", marginRight: "40px" }}
+              />
             ))}
           </Carousel>
         </div>
       </section>
-    )
-  }
+    );
+  };
 
   return (
     <div className="container mx-auto">
+      <div className="md:hidden flex my-5 items-center rounded border border-[#FEBD01] pl-3 pt-3 pb-3 w-full md:w-[400px]">
+        <div className="mr-3">
+          <AiOutlineSearch />
+        </div>
+
+        <input
+          type="text"
+          className="bg-transparent outline-none w-full"
+          placeholder="Search Cakes"
+        />
+      </div>
+      <button className="border border-[#FEBD01] p-3 hidden md:flex hover:bg-[#FEBD01] rounded">
+        Search
+      </button>
       {Showcase()}
 
       <div>
