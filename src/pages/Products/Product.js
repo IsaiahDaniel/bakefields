@@ -19,7 +19,7 @@ const Product = () => {
       title: "New Cake",
       description:
         "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum, quis veniam! Blanditiis perspiciatis quas, modi molestias, tempore aliquid nihil id commodi incidunt veritatis explicabo aut laborum, animi quidem obcaecati dicta!",
-      image: require("../../assets/cake-1.jpg"),
+      image: require("../../assets/cake-3.jpg"),
     },
     {
       id: "2",
@@ -27,7 +27,7 @@ const Product = () => {
       title: "New Cake",
       description:
         "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum, quis veniam! Blanditiis perspiciatis quas, modi molestias, tempore aliquid nihil id commodi incidunt veritatis explicabo aut laborum, animi quidem obcaecati dicta!",
-      image: require("../../assets/cake-2.jpg"),
+      image: require("../../assets/cake-4.jpg"),
     },
     {
       id: "3",
@@ -35,7 +35,7 @@ const Product = () => {
       title: "New Cake",
       description:
         "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum, quis veniam! Blanditiis perspiciatis quas, modi molestias, tempore aliquid nihil id commodi incidunt veritatis explicabo aut laborum, animi quidem obcaecati dicta!",
-      image: require("../../assets/cake-2.jpg"),
+      image: require("../../assets/cake-5.jpg"),
     },
     {
       id: "4",
@@ -43,7 +43,7 @@ const Product = () => {
       title: "New Cake",
       description:
         "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum, quis veniam! Blanditiis perspiciatis quas, modi molestias, tempore aliquid nihil id commodi incidunt veritatis explicabo aut laborum, animi quidem obcaecati dicta!",
-      image: require("../../assets/cake-2.jpg"),
+      image: require("../../assets/cake-6.jpg"),
     },
     {
       id: "5",
@@ -51,7 +51,7 @@ const Product = () => {
       title: "New Cake",
       description:
         "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum, quis veniam! Blanditiis perspiciatis quas, modi molestias, tempore aliquid nihil id commodi incidunt veritatis explicabo aut laborum, animi quidem obcaecati dicta!",
-      image: require("../../assets/cake-2.jpg"),
+      image: require("../../assets/cake-7.jpg"),
     },
   ];
 
@@ -119,15 +119,18 @@ const Product = () => {
               </div>
 
               <div class="flex justify-center w-1/5 mt-6 pl-20">
-                { quantity >= 0 && (
-                    <div onClick={() => setQuantity(quantity - 1)} className="mt-1">
-                        <svg
-                        class="fill-current text-gray-600 w-3"
-                        viewBox="0 0 448 512"
-                        >
-                        <path d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z" />
-                        </svg>
-                    </div>
+                {quantity >= 0 && (
+                  <div
+                    onClick={() => setQuantity(quantity - 1)}
+                    className="mt-1"
+                  >
+                    <svg
+                      class="fill-current text-gray-600 w-3"
+                      viewBox="0 0 448 512"
+                    >
+                      <path d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z" />
+                    </svg>
+                  </div>
                 )}
 
                 <input
@@ -135,20 +138,19 @@ const Product = () => {
                   type="text"
                   value={quantity}
                 />
-                
+
                 <div onClick={() => setQuantity(quantity + 1)} className="mt-1">
-                    <svg
+                  <svg
                     class="fill-current text-gray-600 w-3"
                     viewBox="0 0 448 512"
-                    >
+                  >
                     <path d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z" />
-                    </svg>
+                  </svg>
                 </div>
 
                 <div className="ml-10">
-                    <h3>Quantity</h3>
+                  <h3>Quantity</h3>
                 </div>
-
               </div>
 
               <Button text={"Place Order"} />

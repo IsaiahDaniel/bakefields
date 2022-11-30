@@ -48,7 +48,7 @@ const Home = () => {
       title: "New Cake",
       description:
         "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum, quis veniam! Blanditiis perspiciatis quas, modi molestias, tempore aliquid nihil id commodi incidunt veritatis explicabo aut laborum, animi quidem obcaecati dicta!",
-      image: require("../../assets/cake-7.jpg"),
+      image: require("../../assets/cake-1.jpg"),
     },
   ];
 
@@ -158,7 +158,7 @@ const Home = () => {
   };
 
   return (
-    <div className="container mx-auto pl-6 pr-6 pt-5">
+    <div className="container mx-auto pl-4 pr-4 pt-5">
       <div className="md:hidden flex my-5 items-center rounded border border-[#FEBD01] pt-3 pb-3 w-full md:w-[400px]">
         <div className="mr-1 ml-2">
           <AiOutlineSearch />

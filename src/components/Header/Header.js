@@ -19,12 +19,12 @@ const Header = () => {
     <div className="shadow-lg w-full">
       <header className="container mx-auto">
         <nav className="flex items-center justify-between">
-          <div className="flex items-center mr-10 md:mr-0">
-            <Link to="/" className="w-[200px]">
-              <img src={logo} alt="" style={{ width: "80%" }} className="object-cover" />
+          <div className="flex items-center md:mr-0">
+            <Link to="/" className="w-[170px]">
+              <img src={logo} alt="" style={{ width: "80%" }} />
             </Link>
-            <div className="md:flex items-center rounded border border-[#FEBD01] pl-3 pt-3 pb-3 w-full md:w-[400px] hidden">
-              <div className="mr-3">
+            <div className="md:flex items-center rounded border border-[#FEBD01] pt-3 pb-3 w-full md:w-[400px] hidden">
+              <div className="mr-2 ml-2">
                 <AiOutlineSearch />
               </div>
 
