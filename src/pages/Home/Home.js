@@ -16,7 +16,7 @@ const Home = () => {
       title: "New Cake",
       description:
         "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum, quis veniam! Blanditiis perspiciatis quas, modi molestias, tempore aliquid nihil id commodi incidunt veritatis explicabo aut laborum, animi quidem obcaecati dicta!",
-      image: require("../../assets/cake-1.jpg"),
+      image: require("../../assets/cake-3.jpg"),
     },
     {
       id: 2,
@@ -24,7 +24,7 @@ const Home = () => {
       title: "New Cake",
       description:
         "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum, quis veniam! Blanditiis perspiciatis quas, modi molestias, tempore aliquid nihil id commodi incidunt veritatis explicabo aut laborum, animi quidem obcaecati dicta!",
-      image: require("../../assets/cake-2.jpg"),
+      image: require("../../assets/cake-4.jpg"),
     },
     {
       id: 3,
@@ -32,7 +32,7 @@ const Home = () => {
       title: "New Cake",
       description:
         "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum, quis veniam! Blanditiis perspiciatis quas, modi molestias, tempore aliquid nihil id commodi incidunt veritatis explicabo aut laborum, animi quidem obcaecati dicta!",
-      image: require("../../assets/cake-2.jpg"),
+      image: require("../../assets/cake-5.jpg"),
     },
     {
       id: 4,
@@ -40,7 +40,7 @@ const Home = () => {
       title: "New Cake",
       description:
         "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum, quis veniam! Blanditiis perspiciatis quas, modi molestias, tempore aliquid nihil id commodi incidunt veritatis explicabo aut laborum, animi quidem obcaecati dicta!",
-      image: require("../../assets/cake-2.jpg"),
+      image: require("../../assets/cake-6.jpg"),
     },
     {
       id: 5,
@@ -48,7 +48,7 @@ const Home = () => {
       title: "New Cake",
       description:
         "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum, quis veniam! Blanditiis perspiciatis quas, modi molestias, tempore aliquid nihil id commodi incidunt veritatis explicabo aut laborum, animi quidem obcaecati dicta!",
-      image: require("../../assets/val-double-delight.png"),
+      image: require("../../assets/cake-7.jpg"),
     },
   ];
 
@@ -56,32 +56,32 @@ const Home = () => {
     {
       id: 1,
       category: "birthday",
-      image: require("../../assets/1.jpeg"),
+      image: require("../../assets/bread-1.jpg"),
     },
     {
       id: 2,
       category: "Wedding",
-      image: require("../../assets/2.jpeg"),
+      image: require("../../assets/bread-2.jpg"),
     },
     {
       id: 3,
       category: "naming",
-      image: require("../../assets/3.jpeg"),
+      image: require("../../assets/bread-1.jpg"),
     },
     {
       id: 4,
       category: "naming",
-      image: require("../../assets/1.jpeg"),
+      image: require("../../assets/cake-9.jpg"),
     },
     {
       id: 5,
       category: "naming",
-      image: require("../../assets/2.jpeg"),
+      image: require("../../assets/cake-8.jpg"),
     },
     {
       id: 3,
       category: "naming",
-      image: require("../../assets/3.jpeg"),
+      image: require("../../assets/cake-3.jpg"),
     },
   ];
 
@@ -94,7 +94,7 @@ const Home = () => {
 
   const Showcase = () => {
     return (
-      <section className="flex-col-reverse md:flex md:flex-row items-center justify-between my-[10px] pl-[18px]">
+      <section className="flex-col-reverse md:flex md:flex-row items-center justify-between my-[10px] pl-[18px] xl:pl-0">
         <div className="mr-5 mb-3 md:mb-0 mx-auto">
           <img
             src={Banner}
@@ -170,9 +170,9 @@ const Home = () => {
           placeholder="Search Cakes"
         />
       </div>
-      <button className="border border-[#FEBD01] p-3 hidden md:flex hover:bg-[#FEBD01] rounded">
+      {/* <button className="border border-[#FEBD01] p-3 hidden md:flex hover:bg-[#FEBD01] rounded">
         Search
-      </button>
+      </button> */}
       {Showcase()}
 
       <div>
