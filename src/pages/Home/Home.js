@@ -94,7 +94,7 @@ const Home = () => {
 
   const Showcase = () => {
     return (
-      <section className="flex-col-reverse md:flex md:flex-row items-center justify-between my-[10px] pl-[18px] xl:pl-0 space-x-3">
+      <section className="flex-col-reverse md:flex md:flex-row items-center justify-between my-[10px] pl-[18px] xl:pl-0">
         <div className="mr-5 mb-3 md:mb-0 mx-auto">
           <img
             src={Banner}
@@ -158,9 +158,9 @@ const Home = () => {
   };
 
   return (
-    <div className="container mx-auto">
-      <div className="md:hidden flex my-5 items-center rounded border border-[#FEBD01] pl-3 pt-3 pb-3 w-full md:w-[400px]">
-        <div className="mr-3">
+    <div className="container mx-auto pl-6 pr-6 pt-5">
+      <div className="md:hidden flex my-5 items-center rounded border border-[#FEBD01] pt-3 pb-3 w-full md:w-[400px]">
+        <div className="mr-1 ml-2">
           <AiOutlineSearch />
         </div>
 
@@ -170,9 +170,7 @@ const Home = () => {
           placeholder="Search Cakes"
         />
       </div>
-      {/* <button className="border border-[#FEBD01] p-3 hidden md:flex hover:bg-[#FEBD01] rounded">
-        Search
-      </button> */}
+
       {Showcase()}
 
       <div>
