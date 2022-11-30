@@ -134,7 +134,8 @@ const Home = () => {
         <h2 className="text-4xl text-center mt-10 mb-10">
           Top Selling Products
         </h2>
-        <div className="flex items-center md:justify-between justify-center  flex-wrap">
+
+        <div className="grid grid-cols-2 gap-8 xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-3">
           {PRODUCTS_LIST.map((product) => (
             <div className="mb-10" key={product.id}>
               <Product product={product} key={product.id} />
