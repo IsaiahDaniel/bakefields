@@ -10,7 +10,7 @@ const Products = () => {
       title: "New Cake",
       description:
         "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum, quis veniam! Blanditiis perspiciatis quas, modi molestias, tempore aliquid nihil id commodi incidunt veritatis explicabo aut laborum, animi quidem obcaecati dicta!",
-      image: require("../../assets/cake-1.jpg"),
+      image: require("../../assets/cake-3.jpg"),
     },
     {
       id: 2,
@@ -18,7 +18,7 @@ const Products = () => {
       title: "New Cake",
       description:
         "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum, quis veniam! Blanditiis perspiciatis quas, modi molestias, tempore aliquid nihil id commodi incidunt veritatis explicabo aut laborum, animi quidem obcaecati dicta!",
-      image: require("../../assets/cake-2.jpg"),
+      image: require("../../assets/cake-4.jpg"),
     },
     {
       id: 3,
@@ -26,7 +26,7 @@ const Products = () => {
       title: "New Cake",
       description:
         "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum, quis veniam! Blanditiis perspiciatis quas, modi molestias, tempore aliquid nihil id commodi incidunt veritatis explicabo aut laborum, animi quidem obcaecati dicta!",
-      image: require("../../assets/cake-2.jpg"),
+      image: require("../../assets/cake-5.jpg"),
     },
     {
       id: 4,
@@ -34,7 +34,7 @@ const Products = () => {
       title: "New Cake",
       description:
         "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum, quis veniam! Blanditiis perspiciatis quas, modi molestias, tempore aliquid nihil id commodi incidunt veritatis explicabo aut laborum, animi quidem obcaecati dicta!",
-      image: require("../../assets/cake-2.jpg"),
+      image: require("../../assets/cake-6.jpg"),
     },
     {
       id: 5,
@@ -42,16 +42,29 @@ const Products = () => {
       title: "New Cake",
       description:
         "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum, quis veniam! Blanditiis perspiciatis quas, modi molestias, tempore aliquid nihil id commodi incidunt veritatis explicabo aut laborum, animi quidem obcaecati dicta!",
-      image: require("../../assets/cake-2.jpg"),
+      image: require("../../assets/cake-7.jpg"),
+    },
+    {
+      id: 5,
+      price: "2.99",
+      title: "New Cake",
+      description:
+        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum, quis veniam! Blanditiis perspiciatis quas, modi molestias, tempore aliquid nihil id commodi incidunt veritatis explicabo aut laborum, animi quidem obcaecati dicta!",
+      image: require("../../assets/cake-8.jpg"),
+    },
+    {
+      id: 5,
+      price: "2.99",
+      title: "New Cake",
+      description:
+        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum, quis veniam! Blanditiis perspiciatis quas, modi molestias, tempore aliquid nihil id commodi incidunt veritatis explicabo aut laborum, animi quidem obcaecati dicta!",
+      image: require("../../assets/cake-9.jpg"),
     },
   ];
 
   return (
     <div className="container mx-auto">
       <div className="flex-col md:flex md:flex-row justify-center items-center mt-10">
-
-          {/* dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 */}
-
         <div className="pl-5 pr-5">
           <select
             id="category"
