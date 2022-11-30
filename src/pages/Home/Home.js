@@ -148,7 +148,7 @@ const Home = () => {
               <img
                 src={category.image}
                 alt=""
-                style={{ width: "300px", height: "300px", marginRight: "40px" }}
+                style={{ marginRight: "40px" }}
               />
             ))}
           </Carousel>
