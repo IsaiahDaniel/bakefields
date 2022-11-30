@@ -16,7 +16,7 @@ const Home = () => {
       title: "New Cake",
       description:
         "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum, quis veniam! Blanditiis perspiciatis quas, modi molestias, tempore aliquid nihil id commodi incidunt veritatis explicabo aut laborum, animi quidem obcaecati dicta!",
-      image: require("../../assets/cake-3.jpg"),
+      image: require("../../assets/d216_1.jpeg"),
     },
     {
       id: 2,
@@ -24,7 +24,7 @@ const Home = () => {
       title: "New Cake",
       description:
         "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum, quis veniam! Blanditiis perspiciatis quas, modi molestias, tempore aliquid nihil id commodi incidunt veritatis explicabo aut laborum, animi quidem obcaecati dicta!",
-      image: require("../../assets/cake-4.jpg"),
+      image: require("../../assets/d21.jpeg"),
     },
     {
       id: 3,
@@ -32,7 +32,7 @@ const Home = () => {
       title: "New Cake",
       description:
         "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum, quis veniam! Blanditiis perspiciatis quas, modi molestias, tempore aliquid nihil id commodi incidunt veritatis explicabo aut laborum, animi quidem obcaecati dicta!",
-      image: require("../../assets/cake-5.jpg"),
+      image: require("../../assets/d78_1.jpeg"),
     },
     {
       id: 4,
@@ -40,7 +40,7 @@ const Home = () => {
       title: "New Cake",
       description:
         "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum, quis veniam! Blanditiis perspiciatis quas, modi molestias, tempore aliquid nihil id commodi incidunt veritatis explicabo aut laborum, animi quidem obcaecati dicta!",
-      image: require("../../assets/cake-6.jpg"),
+      image: require("../../assets/triple_treat.png"),
     },
     {
       id: 5,
@@ -48,7 +48,15 @@ const Home = () => {
       title: "New Cake",
       description:
         "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum, quis veniam! Blanditiis perspiciatis quas, modi molestias, tempore aliquid nihil id commodi incidunt veritatis explicabo aut laborum, animi quidem obcaecati dicta!",
-      image: require("../../assets/cake-1.jpg"),
+      image: require("../../assets/c29_600_2_1.jpeg"),
+    },
+    {
+      id: 6,
+      price: "2.99",
+      title: "New Cake",
+      description:
+        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum, quis veniam! Blanditiis perspiciatis quas, modi molestias, tempore aliquid nihil id commodi incidunt veritatis explicabo aut laborum, animi quidem obcaecati dicta!",
+      image: require("../../assets/choc_splash.png"),
     },
   ];
 
@@ -149,6 +157,7 @@ const Home = () => {
                 src={category.image}
                 alt=""
                 style={{ marginRight: "40px" }}
+                className="min-w-full"
               />
             ))}
           </Carousel>
