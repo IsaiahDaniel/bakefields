@@ -56,32 +56,32 @@ const Home = () => {
     {
       id: 1,
       category: "birthday",
-      image: require("../../assets/bread-1.jpg"),
+      image: require("../../assets/birthday.png"),
     },
     {
       id: 2,
       category: "Wedding",
-      image: require("../../assets/bread-2.jpg"),
+      image: require("../../assets/buttercream.png"),
     },
     {
       id: 3,
       category: "naming",
-      image: require("../../assets/bread-1.jpg"),
+      image: require("../../assets/children.png"),
     },
     {
       id: 4,
       category: "naming",
-      image: require("../../assets/cake-9.jpg"),
+      image: require("../../assets/midbite-loaf.png"),
     },
     {
       id: 5,
       category: "naming",
-      image: require("../../assets/cake-8.jpg"),
+      image: require("../../assets/special-loaf.png"),
     },
     {
       id: 3,
       category: "naming",
-      image: require("../../assets/cake-3.jpg"),
+      image: require("../../assets/weddings.png"),
     },
   ];
 
