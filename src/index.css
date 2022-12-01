@@ -2,6 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-img {
-    width: "100%";
+body {
+    background: #F5F5F5;
 }
