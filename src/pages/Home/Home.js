@@ -268,7 +268,7 @@ const Home = () => {
                 src={category.image}
                 alt=""
                 style={{ marginRight: "40px" }}
-                className="w-[600px] md:min-w-full"
+                className="sm:w-full h-[300px] md:min-w-full"
               />
             ))}
           </Carousel>
