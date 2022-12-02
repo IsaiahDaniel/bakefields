@@ -207,6 +207,8 @@ const Product = () => {
                 </select>
               </div>
 
+              <br />
+
               <div className="w-full">
                 <label htmlFor="category">Choose Flavour</label>
                 <select
@@ -214,9 +216,9 @@ const Product = () => {
                   class="bg-gray-50 border border-gray-300 pt-6 pb-6 mr-10 text-gray-900 text-sm rounded-lg  block w-full p-2.5"
                 >
                   <option selected>Choose a Cake Size</option>
-                  <option value="10">10""</option>
-                  <option value="20">20""</option>
-                  <option value="30">30""</option>
+                  <option value="10">Vanilla</option>
+                  <option value="20">strawberry</option>
+                  <option value="30">apple</option>
                 </select>
               </div>
 
