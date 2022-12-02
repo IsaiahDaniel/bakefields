@@ -9,14 +9,8 @@ import { FiFacebook } from "react-icons/fi";
 
 const Footer = () => {
   return (
-    <footer className="bg-white text-black border-t-2 pt-10 min-h-full pb-10 md:mt-0 mt-48">
-      <div className="w-[70%] mx-auto flex-col md:flex md:flex-row items-center justify-between">
-        <div className="mb-10 md:mb-0">
-          <h3 className="text-2xl">Categories</h3>
-          <p className="pt-5">Two step cake</p>
-          <p className="pt-5">Three step cake</p>
-        </div>
-
+    <footer className="bg-white text-black border-t-2 pt-10 h-full pb-10 md:mt-0 mt-48">
+      <div className="w-[60%] mx-auto flex-col md:flex md:flex-row items-center justify-between">
         <div className="mb-10 md:mb-0">
           <h3 className="text-2xl">Company</h3>
           <p className="pt-5">About Us</p>
@@ -26,7 +20,6 @@ const Footer = () => {
         <div className="mb-10 md:mb-0">
           <h3 className="text-2xl">Policy</h3>
           <p className="pt-5">Return Policy</p>
-          <p className="pt-5">Pivacy Policy</p>
           <p className="pt-5">Terms and conditions</p>
         </div>
 
