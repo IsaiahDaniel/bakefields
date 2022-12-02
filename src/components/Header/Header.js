@@ -9,7 +9,7 @@ import {
   AiOutlineInstagram,
   AiOutlineWhatsApp,
 } from "react-icons/ai";
-import { FcAbout } from "react-icons/fc";
+// import { FcAbout } from "react-icons/fc";
 import logo from "../../assets/logo.png";
 
 const Header = () => {
@@ -100,7 +100,7 @@ const Header = () => {
                   </Link>
                 </li>
 
-                <li className="mb-5" onClick={() => setShowMenu(false)}>
+                {/* <li className="mb-5" onClick={() => setShowMenu(false)}>
                   <Link to="/products">
                     <div className="flex items-center">
                       <FcAbout
@@ -111,7 +111,7 @@ const Header = () => {
                       <p>About Us</p>
                     </div>
                   </Link>
-                </li>
+                </li> */}
 
                 <li className="mb-5" onClick={() => setShowMenu(false)}>
                   <Link to="/login">
