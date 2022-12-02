@@ -268,13 +268,13 @@ const Product = () => {
             <div className="mt-10">
               <h3 className="text-2xl">Talk to us on Social</h3>
               <div className="flex items-center mt-4">
-                <div className="rounded-lg border border-[#F72238] p-2 mr-3">
-                  <AiFillFacebook size={24} />
+                <div className="rounded-lg border border-[#F72238] bg-[#F72238] p-2 mr-3">
+                  <AiFillFacebook size={24} color="white" />
                 </div>
-                <div className="rounded-lg border border-[#F72238] p-2 mr-3">
-                  <AiOutlineInstagram size={24} />
+                <div className="rounded-lg border border-[#F72238] bg-[#F72238] p-2 mr-3">
+                  <AiOutlineInstagram size={24} color="white" />
                 </div>
-                <div className="rounded-lg border border-[#F72238] p-2 mr-3">
+                <div className="rounded-lg border border-[#F72238] bg-[#F72238] p-2 mr-3">
                   <AiOutlineWhatsApp size={24} />
                 </div>
               </div>
