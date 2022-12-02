@@ -5,10 +5,18 @@ import { Link } from "react-router-dom";
 import BackDrop from "../BackDrop/BackDrop";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import {
-  AiFillFacebook,
+  // AiFillFacebook,
   AiOutlineInstagram,
   AiOutlineWhatsApp,
 } from "react-icons/ai";
+
+// import {
+//   AiOutlineInstagram,
+//   AiOutlineWhatsApp,
+// } from "react-icons/ai";
+
+import { FiFacebook } from "react-icons/fi";
+
 // import { FcAbout } from "react-icons/fc";
 import logo from "../../assets/logo.png";
 
@@ -34,7 +42,9 @@ const Header = () => {
                 placeholder="Search Cakes"
               />
             </div>
-            <button className="border border-[#FEBD01] p-3 hidden md:flex hover:bg-[#FEBD01] rounded">Search</button>
+            <button className="border border-[#FEBD01] p-3 hidden md:flex hover:bg-[#FEBD01] rounded">
+              Search
+            </button>
           </div>
 
           <ul className="hidden md:flex items-center justify-between">
@@ -71,17 +81,17 @@ const Header = () => {
           {showMenu && <BackDrop />}
 
           {showMenu && (
-            <div className="bg-[#262626] absolute top-0 right-0 bottom-0 w-9/12 h-screen z-10 md:hidden">
+            <div className="bg-white shadow-lg absolute top-0 right-0 bottom-0 w-9/12 h-screen z-10 md:hidden">
               <div className="relative p-5">
                 <AiOutlineClose
                   size={24}
-                  color="white"
+                  color="black"
                   style={{ marginLeft: "auto" }}
                   onClick={() => setShowMenu(false)}
                 />
               </div>
 
-              <ul className="p-5 text-white">
+              <ul className="p-5 text-black">
                 <li className="mb-5" onClick={() => setShowMenu(false)}>
                   <Link to="/">
                     <div className="flex items-center">
@@ -124,10 +134,16 @@ const Header = () => {
 
                 <div className="mt-10">
                   <h3 className="text-2xl">Connect on Social</h3>
-                  <div className="flex items-center justify-between mt-4">
-                    <AiFillFacebook size={24} />
-                    <AiOutlineInstagram size={24} />
-                    <AiOutlineWhatsApp size={24} />
+                  <div className="flex items-center mt-4">
+                    <div className="rounded-lg border border-[#F72238] bg-[#F72238] p-2 mr-3">
+                      <FiFacebook size={24} color="white" />
+                    </div>
+                    <div className="rounded-lg border border-[#F72238] bg-[#F72238] p-2 mr-3">
+                      <AiOutlineInstagram size={24} color="white" />
+                    </div>
+                    <div className="rounded-lg border border-[#F72238] bg-[#F72238] p-2 mr-3">
+                      <AiOutlineWhatsApp size={24} color="white" />
+                    </div>
                   </div>
                 </div>
               </ul>
