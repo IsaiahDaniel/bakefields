@@ -173,7 +173,7 @@ const Product = () => {
 
   const renderBanner = () => {
     return (
-      <div className="bg-gradient-to-r from-[#FEBD01] to-[#F72238] p-10">
+      <div className="bg-[#F72238] p-5">
         <h3 className="text-4xl text-center text-white">Category Cake</h3>
       </div>
     );
