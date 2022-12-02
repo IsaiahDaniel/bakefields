@@ -181,7 +181,7 @@ const Product = () => {
 
   const renderProductDetail = () => {
     return (
-      <div className="mt-10 mb-10 p-3 md:p-0">
+      <div className="mt-5 md:mt-10 mb-10 p-3 md:p-0">
         <div className="flex-col md:flex md:flex-row">
           <div className="mr-10 flex-1 bg-red-6000">
             <img
@@ -243,7 +243,7 @@ const Product = () => {
                 </span>
               </div>
 
-              <div class="flex justify-center w-1/5 mt-6 pl-20">
+              <div class="flex justify-center w-1/5 mt-6 pl-32">
                 {quantity >= 0 && (
                   <div
                     onClick={() => setQuantity(quantity - 1)}
