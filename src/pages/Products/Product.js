@@ -19,7 +19,7 @@ const Product = () => {
       title: "New Cake",
       description:
         "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum, quis veniam! Blanditiis perspiciatis quas, modi molestias, tempore aliquid nihil id commodi incidunt veritatis explicabo aut laborum, animi quidem obcaecati dicta!",
-      image: require("../../assets/cake-3.jpg"),
+      image: require("../../assets/categories/sport-1.jpg"),
     },
     {
       id: "2",
@@ -27,7 +27,7 @@ const Product = () => {
       title: "New Cake",
       description:
         "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum, quis veniam! Blanditiis perspiciatis quas, modi molestias, tempore aliquid nihil id commodi incidunt veritatis explicabo aut laborum, animi quidem obcaecati dicta!",
-      image: require("../../assets/cake-4.jpg"),
+      image: require("../../assets/categories/sport-2.jpg"),
     },
     {
       id: "3",
@@ -35,7 +35,7 @@ const Product = () => {
       title: "New Cake",
       description:
         "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum, quis veniam! Blanditiis perspiciatis quas, modi molestias, tempore aliquid nihil id commodi incidunt veritatis explicabo aut laborum, animi quidem obcaecati dicta!",
-      image: require("../../assets/cake-5.jpg"),
+      image: require("../../assets/categories/sport-3.jpg"),
     },
     {
       id: "4",
@@ -43,7 +43,7 @@ const Product = () => {
       title: "New Cake",
       description:
         "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum, quis veniam! Blanditiis perspiciatis quas, modi molestias, tempore aliquid nihil id commodi incidunt veritatis explicabo aut laborum, animi quidem obcaecati dicta!",
-      image: require("../../assets/cake-6.jpg"),
+      image: require("../../assets/categories/sport-4.jpg"),
     },
     {
       id: "5",
@@ -51,13 +51,123 @@ const Product = () => {
       title: "New Cake",
       description:
         "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum, quis veniam! Blanditiis perspiciatis quas, modi molestias, tempore aliquid nihil id commodi incidunt veritatis explicabo aut laborum, animi quidem obcaecati dicta!",
-      image: require("../../assets/cake-7.jpg"),
+      image: require("../../assets/categories/sport-5.jpg"),
+    },
+    {
+      id: "6",
+      price: "2.99",
+      title: "New Cake",
+      description:
+        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum, quis veniam! Blanditiis perspiciatis quas, modi molestias, tempore aliquid nihil id commodi incidunt veritatis explicabo aut laborum, animi quidem obcaecati dicta!",
+      image: require("../../assets/categories/children-1.jpg"),
+    },
+    {
+      id: "6",
+      price: "2.99",
+      title: "New Cake",
+      description:
+        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum, quis veniam! Blanditiis perspiciatis quas, modi molestias, tempore aliquid nihil id commodi incidunt veritatis explicabo aut laborum, animi quidem obcaecati dicta!",
+      image: require("../../assets/categories/children-2.jpg"),
+    },
+    {
+      id: "7",
+      price: "2.99",
+      title: "New Cake",
+      description:
+        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum, quis veniam! Blanditiis perspiciatis quas, modi molestias, tempore aliquid nihil id commodi incidunt veritatis explicabo aut laborum, animi quidem obcaecati dicta!",
+      image: require("../../assets/categories/children-3.jpg"),
+    },
+    {
+      id: "8",
+      price: "2.99",
+      title: "New Cake",
+      description:
+        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum, quis veniam! Blanditiis perspiciatis quas, modi molestias, tempore aliquid nihil id commodi incidunt veritatis explicabo aut laborum, animi quidem obcaecati dicta!",
+      image: require("../../assets/categories/children-4.jpg"),
+    },
+    {
+      id: "9",
+      price: "2.99",
+      title: "New Cake",
+      description:
+        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum, quis veniam! Blanditiis perspiciatis quas, modi molestias, tempore aliquid nihil id commodi incidunt veritatis explicabo aut laborum, animi quidem obcaecati dicta!",
+      image: require("../../assets/categories/children-5.jpg"),
+    },
+    {
+      id: "10",
+      price: "2.99",
+      title: "New Cake",
+      description:
+        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum, quis veniam! Blanditiis perspiciatis quas, modi molestias, tempore aliquid nihil id commodi incidunt veritatis explicabo aut laborum, animi quidem obcaecati dicta!",
+      image: require("../../assets/categories/children-6.jpg"),
+    },
+    {
+      id: "11",
+      price: "2.99",
+      title: "New Cake",
+      description:
+        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum, quis veniam! Blanditiis perspiciatis quas, modi molestias, tempore aliquid nihil id commodi incidunt veritatis explicabo aut laborum, animi quidem obcaecati dicta!",
+      image: require("../../assets/categories/birthday-1.jpg"),
+    },
+    {
+      id: "12",
+      price: "2.99",
+      title: "New Cake",
+      description:
+        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum, quis veniam! Blanditiis perspiciatis quas, modi molestias, tempore aliquid nihil id commodi incidunt veritatis explicabo aut laborum, animi quidem obcaecati dicta!",
+      image: require("../../assets/categories/birthday-2.jpg"),
+    },
+    {
+      id: "13",
+      price: "2.99",
+      title: "New Cake",
+      description:
+        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum, quis veniam! Blanditiis perspiciatis quas, modi molestias, tempore aliquid nihil id commodi incidunt veritatis explicabo aut laborum, animi quidem obcaecati dicta!",
+      image: require("../../assets/categories/birthday-3.jpg"),
+    },
+    {
+      id: "14",
+      price: "2.99",
+      title: "New Cake",
+      description:
+        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum, quis veniam! Blanditiis perspiciatis quas, modi molestias, tempore aliquid nihil id commodi incidunt veritatis explicabo aut laborum, animi quidem obcaecati dicta!",
+      image: require("../../assets/categories/birthday-4.jpg"),
+    },
+    {
+      id: "15",
+      price: "2.99",
+      title: "New Cake",
+      description:
+        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum, quis veniam! Blanditiis perspiciatis quas, modi molestias, tempore aliquid nihil id commodi incidunt veritatis explicabo aut laborum, animi quidem obcaecati dicta!",
+      image: require("../../assets/categories/birthday-5.jpg"),
+    },
+    {
+      id: "16",
+      price: "2.99",
+      title: "New Cake",
+      description:
+        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum, quis veniam! Blanditiis perspiciatis quas, modi molestias, tempore aliquid nihil id commodi incidunt veritatis explicabo aut laborum, animi quidem obcaecati dicta!",
+      image: require("../../assets/categories/birthday-6.jpg"),
+    },
+    {
+      id: "17",
+      price: "2.99",
+      title: "New Cake",
+      description:
+        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum, quis veniam! Blanditiis perspiciatis quas, modi molestias, tempore aliquid nihil id commodi incidunt veritatis explicabo aut laborum, animi quidem obcaecati dicta!",
+      image: require("../../assets/categories/birthday-7.jpg"),
+    },
+    {
+      id: "18",
+      price: "2.99",
+      title: "New Cake",
+      description:
+        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum, quis veniam! Blanditiis perspiciatis quas, modi molestias, tempore aliquid nihil id commodi incidunt veritatis explicabo aut laborum, animi quidem obcaecati dicta!",
+      image: require("../../assets/categories/birthday-1.jpg"),
     },
   ];
 
   const product = PRODUCTS_LIST.find((product) => product.id === id);
-
-  console.log("product", product);
 
   const renderBanner = () => {
     return (
@@ -71,14 +181,14 @@ const Product = () => {
     return (
       <div className="mt-10 mb-10 p-3 md:p-0">
         <div className="flex-col md:flex md:flex-row">
-          <div className="mr-10">
+          <div className="mr-10 flex-1 bg-red-6000">
             <img
               src={product.image}
               alt={product.title}
-              className="w-[900px]"
+              className="w-full h-[600px] object-contain"
             />
           </div>
-          <div className="w-full">
+          <div className="flex-1">
             <h2 className="text-4xl text-[#FEBD01]">{product.title}</h2>
             <h3 className="text-2xl text-[#F72238]">&#8358;{product.price}</h3>
             <form action="#" className="mt-5">
@@ -158,9 +268,15 @@ const Product = () => {
             <div className="mt-10">
               <h3 className="text-2xl">Talk to us on Social</h3>
               <div className="flex items-center mt-4">
-                <AiFillFacebook size={24} />
-                <AiOutlineInstagram size={24} />
-                <AiOutlineWhatsApp size={24} />
+                <div className="rounded-lg border border-[#F72238] p-2 mr-3">
+                  <AiFillFacebook size={24} />
+                </div>
+                <div className="rounded-lg border border-[#F72238] p-2 mr-3">
+                  <AiOutlineInstagram size={24} />
+                </div>
+                <div className="rounded-lg border border-[#F72238] p-2 mr-3">
+                  <AiOutlineWhatsApp size={24} />
+                </div>
               </div>
             </div>
           </div>

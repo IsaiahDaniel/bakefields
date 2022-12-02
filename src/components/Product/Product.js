@@ -5,11 +5,12 @@ import Rating from "../Rating/Rating";
 const Product = ({ product }) => {
   return (
     <Link to={`/product/${product.id}`}>
-      <div className="shadow-md md:justify-start justify-center">
+      <div className="shadow-lg md:justify-start justify-center">
         <img
           src={product.image}
           alt={product.title}
-          style={{ width: "270px", height: "270px" }}
+          // style={{ width: "270px", height: "270px" }}
+          className="object-cover w-full"
         />
       </div>
       <h3 className="font-bold">{product.title}</h3>
