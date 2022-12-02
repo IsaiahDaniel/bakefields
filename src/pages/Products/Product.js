@@ -2,10 +2,12 @@ import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import { Button } from "../../components";
 import {
-  AiFillFacebook,
+  // AiFillFacebook,
   AiOutlineInstagram,
   AiOutlineWhatsApp,
 } from "react-icons/ai";
+
+import { FiFacebook } from "react-icons/fi";
 
 const Product = () => {
   const { id } = useParams();
@@ -205,6 +207,19 @@ const Product = () => {
                 </select>
               </div>
 
+              <div className="w-full">
+                <label htmlFor="category">Choose Flavour</label>
+                <select
+                  id="category"
+                  class="bg-gray-50 border border-gray-300 pt-6 pb-6 mr-10 text-gray-900 text-sm rounded-lg  block w-full p-2.5"
+                >
+                  <option selected>Choose a Cake Size</option>
+                  <option value="10">10""</option>
+                  <option value="20">20""</option>
+                  <option value="30">30""</option>
+                </select>
+              </div>
+
               <div className="mt-5 w-full">
                 <label htmlFor="message">Cake Message</label>
                 <br />
@@ -263,19 +278,19 @@ const Product = () => {
                 </div>
               </div>
 
-              <Button text={"Place Order"} />
+              <Button text={"Place Order"} primaryInverse />
             </form>
             <div className="mt-10">
               <h3 className="text-2xl">Talk to us on Social</h3>
               <div className="flex items-center mt-4">
                 <div className="rounded-lg border border-[#F72238] bg-[#F72238] p-2 mr-3">
-                  <AiFillFacebook size={24} color="white" />
+                  <FiFacebook size={24} color="white" />
                 </div>
                 <div className="rounded-lg border border-[#F72238] bg-[#F72238] p-2 mr-3">
                   <AiOutlineInstagram size={24} color="white" />
                 </div>
                 <div className="rounded-lg border border-[#F72238] bg-[#F72238] p-2 mr-3">
-                  <AiOutlineWhatsApp size={24} />
+                  <AiOutlineWhatsApp size={24} color="white"  />
                 </div>
               </div>
             </div>
