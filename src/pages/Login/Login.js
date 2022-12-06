@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 const Login = () => {
   return (
-    <div className='flex-col md:flex md:flex-row items-center justify-between h-screen'>
+    <div className='flex-col md:flex md:flex-row items-center justify-between h-screen mt-5'>
         <div className='flex-1'>
             <img src={LoginImage} alt="LoginImage" />
         </div>
@@ -19,11 +19,11 @@ const Login = () => {
                 <form>
                     <Input placeholder="Email Or username" />
                     <Input placeholder="Enter Your Password" />
-                    <Button text="Login" inputType="submit" primary/>
+                    <Button text="Login" inputType="submit" primaryInverse />
                 </form>
 
                 <div className='text-center mt-10'>
-                    <Link to="/register">Already A Member?</Link>
+                    <Link to="/register">Not A Member?</Link>
                 </div>
             </div>
 

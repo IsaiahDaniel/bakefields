@@ -249,7 +249,8 @@ const Home = () => {
           <div className="mr-3 flex-1">
             <div>
               <img
-                src={require("../../assets/olist-showcase.jpeg")}
+                // src={require("../../assets/olist-showcase.jpeg")}
+                src={require("../../assets/banner.png")}
                 alt="banner"
                 className="h-full w-full shadow-lg"
               />
