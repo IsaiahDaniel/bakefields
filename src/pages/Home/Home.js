@@ -2,10 +2,15 @@ import React from "react";
 import { Button, Product } from "../../components";
 import Carousel from "react-elastic-carousel";
 import { AiOutlineSearch } from "react-icons/ai";
-import showcase from "../../assets/showcase-1.jpeg";
+// import showcase from "../../assets/showcase-1.jpeg";
 import needHelp from "../../assets/help-order.gif";
 
+import { AiOutlineRight } from "react-icons/ai";
+import { FaBirthdayCake, FaChild, FaBreadSlice } from "react-icons/fa";
+import { GiButterToast } from "react-icons/gi";
+
 import "./Home.css";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const PRODUCTS_LIST = [
@@ -208,21 +213,77 @@ const Home = () => {
       <>
         <section className="flex items-start">
           <div className="bg-white p-3 hidden mr-3 w-[250px] shadow-lg md:block">
-            <h3 className="text-2xl mb-3">Our Categories</h3>
-            <ul>
-              <li>Birthday</li>
-              <li>Buttercream</li>
-              <li>Children</li>
+            <h3 className="mb-3 text-center font-bold mt-4">Our Categories</h3>
+            <ul className="flex-1">
+              <Link className="flex items-center justify-between p-3">
+                <div className="flex items-center">
+                  <FaBirthdayCake className="mr-2" />
+                  <li>Birthday Cakes</li>
+                </div>
+                <AiOutlineRight />
+              </Link>
+              <Link className="flex items-center justify-between p-3">
+                <div className="flex items-center">
+                  <GiButterToast className="mr-2" size={20} />
+                  <li>Buttercream</li>
+                </div>
+                <AiOutlineRight />
+              </Link>
+              <Link className="flex items-center justify-between p-3">
+                <div className="flex items-center">
+                  <FaChild className="mr-2" />
+                  <li>Children</li>
+                </div>
+                <AiOutlineRight />
+              </Link>
+              <Link className="flex items-center justify-between p-3">
+                <div className="flex items-center">
+                  <FaBreadSlice className="mr-2" />
+                  <li>Midbite Loaf</li>
+                </div>
+                <AiOutlineRight />
+              </Link>
             </ul>
           </div>
-          
+
           <div className="mr-3 flex-1">
-            <img src={showcase} alt="banner" className="h-full w-full shadow-lg" />
+            <div>
+              <img
+                src={require("../../assets/olist-showcase.jpeg")}
+                alt="banner"
+                className="h-full w-full shadow-lg"
+              />
+            </div>
+            <div className="shadow-lg p-3 flex items-center justify-between mt-4">
+              <div>
+                <img
+                  src={require("../../assets/affordable-phone.jpeg")}
+                  alt="phone"
+                  style={{ width: 200 }}
+                  className="rounded"
+                />
+              </div>
+              <div>
+                <img
+                  src={require("../../assets/trending-fashion.jpeg")}
+                  alt="phone"
+                  style={{ width: 200 }}
+                  className="rounded"
+                />
+              </div>
+              <div>
+                <img
+                  src={require("../../assets/affordable-phone.jpeg")}
+                  alt="phone"
+                  style={{ width: 200 }}
+                  className="rounded"
+                />
+              </div>
+            </div>
           </div>
 
-          <div className="md:grid gap-2 grid-cols-2 hidden">
-            <div
-            >
+          {/* <div className="md:grid gap-2 grid-cols-2 hidden">
+            <div>
               <img
                 src={needHelp}
                 alt="needHelp"
@@ -239,7 +300,40 @@ const Home = () => {
 
             <div>
               <img
-                 src={require("../../assets/banner-3.jpeg")}
+                src={require("../../assets/banner-3.jpeg")}
+                alt="needHelp"
+                style={{ height: "200px", width: "150px" }}
+              />
+            </div>
+
+            <div className="bg-green-500">
+              <img
+                src={require("../../assets/banner-4.jpeg")}
+                alt="needHelp"
+                style={{ height: "200px", width: "150px" }}
+              />
+            </div>
+          </div> */}
+
+          <div className="md:grid gap-2 grid-cols-2 hidden">
+            <div>
+              <img
+                src={needHelp}
+                alt="needHelp"
+                style={{ height: "200px", width: "150px" }}
+              />
+            </div>
+            <div>
+              <img
+                src={require("../../assets/banner-2.jpg")}
+                alt="needHelp"
+                style={{ height: "200px", width: "150px" }}
+              />
+            </div>
+
+            <div>
+              <img
+                src={require("../../assets/banner-3.jpeg")}
                 alt="needHelp"
                 style={{ height: "200px", width: "150px" }}
               />

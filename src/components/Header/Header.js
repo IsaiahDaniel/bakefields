@@ -1,27 +1,28 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { AiOutlineSearch, AiOutlineHome, AiOutlineLogin } from "react-icons/ai";
 import { SiCakephp } from "react-icons/si";
 import { Link } from "react-router-dom";
 import BackDrop from "../BackDrop/BackDrop";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import {
-  // AiFillFacebook,
   AiOutlineInstagram,
   AiOutlineWhatsApp,
 } from "react-icons/ai";
 
-// import {
-//   AiOutlineInstagram,
-//   AiOutlineWhatsApp,
-// } from "react-icons/ai";
-
 import { FiFacebook } from "react-icons/fi";
 
-// import { FcAbout } from "react-icons/fc";
 import logo from "../../assets/logo.png";
+import { useContext } from "react";
+import { AuthContext } from "../../context/authContext/AuthContext";
 
 const Header = () => {
   const [showMenu, setShowMenu] = useState(false);
+  const { user } = useContext(AuthContext);
+
+  
+  useEffect(() => {
+    console.log("user", user);
+  }, [user]);
 
   return (
     <div className="shadow-lg w-full">
