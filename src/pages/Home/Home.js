@@ -249,16 +249,15 @@ const Home = () => {
           <div className="mr-3 flex-1">
             <div>
               <img
-                // src={require("../../assets/olist-showcase.jpeg")}
                 src={require("../../assets/banner.png")}
                 alt="banner"
-                className="h-full w-full shadow-lg"
+                className="h-full xl:w-full md:w-full shadow-lg"
               />
             </div>
             <div className="shadow-lg p-3 flex items-center justify-between mt-4">
               <div>
                 <img
-                  src={require("../../assets/affordable-phone.jpeg")}
+                  src={require("../../assets/believably-tasty.png")}
                   alt="phone"
                   style={{ width: 200 }}
                   className="rounded"
@@ -266,7 +265,7 @@ const Home = () => {
               </div>
               <div>
                 <img
-                  src={require("../../assets/trending-fashion.jpeg")}
+                  src={require("../../assets/baked-fresh.png")}
                   alt="phone"
                   style={{ width: 200 }}
                   className="rounded"
@@ -274,7 +273,7 @@ const Home = () => {
               </div>
               <div>
                 <img
-                  src={require("../../assets/affordable-phone.jpeg")}
+                  src={require("../../assets/believably-tasty.png")}
                   alt="phone"
                   style={{ width: 200 }}
                   className="rounded"
@@ -283,68 +282,35 @@ const Home = () => {
             </div>
           </div>
 
-          {/* <div className="md:grid gap-2 grid-cols-2 hidden">
-            <div>
-              <img
-                src={needHelp}
-                alt="needHelp"
-                style={{ height: "200px", width: "150px" }}
-              />
-            </div>
-            <div>
-              <img
-                src={require("../../assets/banner-2.jpg")}
-                alt="needHelp"
-                style={{ height: "200px", width: "150px" }}
-              />
-            </div>
-
-            <div>
-              <img
-                src={require("../../assets/banner-3.jpeg")}
-                alt="needHelp"
-                style={{ height: "200px", width: "150px" }}
-              />
-            </div>
-
-            <div className="bg-green-500">
-              <img
-                src={require("../../assets/banner-4.jpeg")}
-                alt="needHelp"
-                style={{ height: "200px", width: "150px" }}
-              />
-            </div>
-          </div> */}
-
           <div className="md:grid gap-2 grid-cols-2 hidden">
             <div>
               <img
                 src={needHelp}
                 alt="needHelp"
-                style={{ height: "200px", width: "150px" }}
+                style={{ height: "200px", width: "200px" }}
               />
             </div>
             <div>
               <img
-                src={require("../../assets/banner-2.jpg")}
+                src={require("../../assets/lets-chat.png")}
                 alt="needHelp"
-                style={{ height: "200px", width: "150px" }}
+                style={{ height: "200px", width: "200px" }}
               />
             </div>
 
             <div>
               <img
-                src={require("../../assets/banner-3.jpeg")}
+                src={require("../../assets/refer-and-earn-1.png")}
                 alt="needHelp"
-                style={{ height: "200px", width: "150px" }}
+                style={{ height: "200px", width: "200px" }}
               />
             </div>
 
-            <div className="bg-green-500">
+            <div>
               <img
-                src={require("../../assets/banner-4.jpeg")}
+                src={require("../../assets/maybe.png")}
                 alt="needHelp"
-                style={{ height: "200px", width: "150px" }}
+                style={{ height: "200px", width: "200px" }}
               />
             </div>
           </div>
@@ -352,19 +318,19 @@ const Home = () => {
         {/* New section */}
         <div className="md:hidden grid grid-cols-2 items-center mt-5">
           <img
-            src={require("../../assets/banner-2.jpg")}
+            src={require("../../assets/maybe.png")}
             alt="needHelp"
             style={{ height: "150px", width: "200px" }}
             className="mb-5"
           />
           <img
-            src={require("../../assets/banner-3.jpeg")}
+            src={require("../../assets/lets-chat.png")}
             alt="needHelp"
             style={{ height: "150px", width: "200px" }}
             className="mb-5"
           />
           <img
-            src={require("../../assets/banner-4.jpeg")}
+            src={require("../../assets/refer-and-earn-1.png")}
             alt="needHelp"
             style={{ height: "150px", width: "200px" }}
             className="mb-5"
