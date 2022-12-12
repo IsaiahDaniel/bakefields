@@ -5,11 +5,11 @@ import Sidebar from "../../components/Sidebar/Sidebar";
 import { AuthContext } from "../../context/authContext/AuthContext";
 
 const Dashboard = () => {
-  const context = useContext(AuthContext);
+  const { token, isSuccess, isError, isMessage, user } = useContext(AuthContext);
 
   useEffect(() => {
-    console.log("user dashboard", context);
-  }, [context]);
+    // console.log("user dashboard", token, isSuccess, isError, isMessage, user);
+  }, [token, isSuccess, isError, isMessage, user]);
 
   const renderBanner = () => {
     return (
@@ -26,7 +26,7 @@ const Dashboard = () => {
       <Sidebar />
 
       <section className="mt-10 md:mt-0">
-        <h3 className="text-4xl">Hello Isaiah Daniel</h3>
+        <h3 className="text-4xl">Hello {user.username} </h3>
         <p className="mt-4">
           Welcome to your dashboard
         </p>

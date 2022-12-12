@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Button, Input } from "../../components";
 import Sidebar from "../../components/Sidebar/Sidebar";
+import { AuthContext } from "../../context/authContext/AuthContext";
 
 const Account = () => {
+
+  const { user } = useContext(AuthContext);
+
+  console.log(user)
+
   return (
     <div className="mx-auto container mt-10 mb-10 p-5 md:p-5">
       <div className="flex-col md:flex-row md:flex items-start">
@@ -14,19 +20,19 @@ const Account = () => {
             <div className="grid grid-cols-2 gap-5">
                 <div>
                     <h3 className="text-2xl">First name</h3>
-                    <p>Isaiah </p>
+                    <p>{user.username}</p>
                 </div>
                 <div>
-                    <h3 className="text-2xl">Last name</h3>
-                    <p>Daniel</p>
+                    <h3 className="text-2xl">Phone</h3>
+                    <p>{ user.phone }</p>
                 </div>
                 <div>
                     <h3 className="text-2xl">Email</h3>
-                    <p>isaiahdaniel203@gmail.com</p>
+                    <p>{user.email}</p>
                 </div>
                 <div>
                     <h3 className="text-2xl">Location</h3>
-                    <p>Abuja</p>
+                    <p>{user.location}</p>
                 </div>
             </div>
 

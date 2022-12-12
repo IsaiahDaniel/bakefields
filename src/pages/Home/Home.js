@@ -398,8 +398,6 @@ const Home = () => {
         />
       </div>
 
-      {/* {Showcase()} */}
-
       {renderShowcase()}
 
       <div>
@@ -411,3 +409,4 @@ const Home = () => {
 };
 
 export default Home;
+

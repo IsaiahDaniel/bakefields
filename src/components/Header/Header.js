@@ -1,14 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { AiOutlineSearch, AiOutlineHome, AiOutlineLogin } from "react-icons/ai";
 import { SiCakephp } from "react-icons/si";
 import { Link } from "react-router-dom";
 import BackDrop from "../BackDrop/BackDrop";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
-import {
-  AiOutlineInstagram,
-  AiOutlineWhatsApp,
-} from "react-icons/ai";
-
+import { AiOutlineInstagram, AiOutlineWhatsApp } from "react-icons/ai";
+import { CgLogOut } from "react-icons/cg";
 import { FiFacebook } from "react-icons/fi";
 
 import logo from "../../assets/logo.png";
@@ -17,12 +14,7 @@ import { AuthContext } from "../../context/authContext/AuthContext";
 
 const Header = () => {
   const [showMenu, setShowMenu] = useState(false);
-  const { user } = useContext(AuthContext);
-
-  
-  useEffect(() => {
-    console.log("user", user);
-  }, [user]);
+  const { token, logout } = useContext(AuthContext);
 
   return (
     <div className="shadow-lg w-full">
@@ -65,21 +57,32 @@ const Header = () => {
                 </div>
               </Link>
             </li>
-            <li>
-              <Link to="/login">
-                <div className="flex items-center flex-col ">
-                  <AiOutlineLogin size={24} />
-                  <p>Login/Register</p>
-                </div>
-              </Link>
-            </li>
+            {token == null ? (
+              <li>
+                <Link to="/login">
+                  <div className="flex items-center flex-col">
+                    <AiOutlineLogin size={24} />
+                    <p>Login/Register</p>
+                  </div>
+                </Link>
+              </li>
+            ) : (
+              <li onClick={() => logout()}>
+                <Link to="/login">
+                  <div className="flex items-center flex-col">
+                    <CgLogOut size={24} />
+                    <p>Logout</p>
+                  </div>
+                </Link>
+              </li>
+            )}
           </ul>
 
           <div className="md:hidden pr-5" onClick={() => setShowMenu(true)}>
             <AiOutlineMenu size={34} />
           </div>
 
-          {showMenu && <BackDrop />}
+          {showMenu && <BackDrop toggleNav={setShowMenu} />}
 
           {showMenu && (
             <div className="bg-white shadow-lg absolute top-0 right-0 bottom-0 w-9/12 h-screen z-10 md:hidden">
@@ -111,27 +114,30 @@ const Header = () => {
                   </Link>
                 </li>
 
-                {/* <li className="mb-5" onClick={() => setShowMenu(false)}>
-                  <Link to="/products">
-                    <div className="flex items-center">
-                      <FcAbout
-                        size={24}
-                        color="white"
-                        style={{ marginRight: 10 }}
-                      />
-                      <p>About Us</p>
-                    </div>
-                  </Link>
-                </li> */}
-
-                <li className="mb-5" onClick={() => setShowMenu(false)}>
-                  <Link to="/login">
-                    <div className="flex items-center ">
-                      <AiOutlineLogin size={24} style={{ marginRight: 10 }} />
-                      <p>Login/Register</p>
-                    </div>
-                  </Link>
-                </li>
+                <div className="mb-5" onClick={() => setShowMenu(false)}>
+                  {token == null ? (
+                    <li>
+                      <Link to="/login">
+                        <div className="flex items-center ">
+                          <AiOutlineLogin
+                            size={24}
+                            style={{ marginRight: 10 }}
+                          />
+                          <p>Login/Register</p>
+                        </div>
+                      </Link>
+                    </li>
+                  ) : (
+                    <li onClick={() => logout()}>
+                      <Link to="/login">
+                        <div className="flex items-center ">
+                          <CgLogOut size={24} style={{ marginRight: 10 }} />
+                          <p>Logout</p>
+                        </div>
+                      </Link>
+                    </li>
+                  )}
+                </div>
 
                 <div className="mt-10">
                   <h3 className="text-2xl">Connect on Social</h3>
