@@ -11,29 +11,36 @@ import Orders from "./pages/dashboard/Orders";
 import Product from "./pages/Products/Product";
 
 import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 import ProductsProvider from "./context/productsContext/ProductsContext";
+import OrderProvider from "./context/ordersContext/OrderContext";
+import "react-toastify/dist/ReactToastify.css";
+import ReturnPolicy from "./pages/Return/Return";
+import About from "./pages/About/About";
 
 const App = () => {
   return (
     <AuthProvider>
       <ProductsProvider>
-        <Router>
-          <Header />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/dashboard/complain" element={<Complain />} />
-            <Route path="/dashboard/account" element={<Account />} />
-            <Route path="/dashboard/orders" element={<Orders />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/products" element={<Products />} />
-            <Route path="/product/:id" element={<Product />} />
-          </Routes>
-          <Footer />
-        </Router>
-        <ToastContainer />
+        <OrderProvider>
+          <Router>
+            <Header />
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/register" element={<Register />} />
+              <Route path="/dashboard" element={<Dashboard />} />
+              <Route path="/dashboard/complain" element={<Complain />} />
+              <Route path="/dashboard/account" element={<Account />} />
+              <Route path="/dashboard/orders" element={<Orders />} />
+              <Route path="/products" element={<Products />} />
+              <Route path="/product/:id" element={<Product />} />
+              <Route path="/return-policy" element={<ReturnPolicy />} />
+              <Route path="/about" element={<About />} />
+            </Routes>
+            <Footer />
+          </Router>
+          <ToastContainer />
+        </OrderProvider>
       </ProductsProvider>
     </AuthProvider>
   );

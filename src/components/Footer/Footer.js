@@ -6,6 +6,7 @@ import {
 } from "react-icons/ai";
 
 import { FiFacebook } from "react-icons/fi";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -13,14 +14,20 @@ const Footer = () => {
       <div className="w-[60%] mx-auto flex-col md:flex md:flex-row items-center justify-between">
         <div className="mb-10 md:mb-0">
           <h3 className="text-2xl">Company</h3>
-          <p className="pt-5">About Us</p>
+          <Link to="/about">
+            <p className="pt-5">About Us</p>
+          </Link>
           <p className="pt-5">Contact Us</p>
         </div>
 
         <div className="mb-10 md:mb-0">
           <h3 className="text-2xl">Policy</h3>
-          <p className="pt-5">Return Policy</p>
-          <p className="pt-5">Terms and conditions</p>
+          <Link to="/return-policy">
+            <p className="pt-5">Return Policy</p>
+          </Link>
+          <Link to="/return-policy">
+            <p className="pt-5">Terms and conditions</p>
+          </Link>
         </div>
 
         <div className="mb-10 md:mb-0">

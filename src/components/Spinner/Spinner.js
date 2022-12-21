@@ -3,8 +3,10 @@ import Loader from "../../assets/spinner.gif";
 
 const Spinner = () => {
   return (
-    <img src={Loader} alt="Loader" style={{ width: 25, height: 25 }} />
+    <div className='flex items-center justify-center'>
+      <img src={Loader} alt="Loader" style={{ width: 300, height: 300 }} />
+    </div>
   )
 }
 
-export default Spinner
+export default Spinner;

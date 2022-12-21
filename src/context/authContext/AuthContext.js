@@ -22,7 +22,7 @@ export const AuthProvider = ({ children }) => {
 
   const setLoading = () => dispatch({ type: "SET_LOADING" });
 
-  console.log("Auth state", state);
+  // console.log("Auth state", state);
 
   const registerUser = async (userData) => {
     setLoading();

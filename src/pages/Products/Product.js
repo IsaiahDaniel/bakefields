@@ -8,169 +8,68 @@ import {
 } from "react-icons/ai";
 
 import { FiFacebook } from "react-icons/fi";
+import { useEffect, useContext } from "react";
+import { ProductContext } from "../../context/productsContext/ProductsContext";
+import Spinner from "../../components/Spinner/Spinner";
+import { OrderContext } from "../../context/ordersContext/OrderContext";
+import { toast } from "react-toastify";
 
 const Product = () => {
   const { id } = useParams();
 
+  const [inputs, setInputs] = useState({
+    name: "",
+    price: "",
+    size: "",
+    flavour: "",
+    message: "",
+    details: "",
+    quantity: ""
+  })
   const [quantity, setQuantity] = useState(1);
+  const { product, isLoading, getProduct, isSuccess } = useContext(ProductContext);
+  const { createOrder } = useContext(OrderContext);
 
-  const PRODUCTS_LIST = [
-    {
-      id: "1",
-      price: "2.99",
-      title: "New Cake",
-      description:
-        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum, quis veniam! Blanditiis perspiciatis quas, modi molestias, tempore aliquid nihil id commodi incidunt veritatis explicabo aut laborum, animi quidem obcaecati dicta!",
-      image: require("../../assets/categories/sport-1.jpg"),
-    },
-    {
-      id: "2",
-      price: "6.99",
-      title: "New Cake",
-      description:
-        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum, quis veniam! Blanditiis perspiciatis quas, modi molestias, tempore aliquid nihil id commodi incidunt veritatis explicabo aut laborum, animi quidem obcaecati dicta!",
-      image: require("../../assets/categories/sport-2.jpg"),
-    },
-    {
-      id: "3",
-      price: "2.99",
-      title: "New Cake",
-      description:
-        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum, quis veniam! Blanditiis perspiciatis quas, modi molestias, tempore aliquid nihil id commodi incidunt veritatis explicabo aut laborum, animi quidem obcaecati dicta!",
-      image: require("../../assets/categories/sport-3.jpg"),
-    },
-    {
-      id: "4",
-      price: "2.99",
-      title: "New Cake",
-      description:
-        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum, quis veniam! Blanditiis perspiciatis quas, modi molestias, tempore aliquid nihil id commodi incidunt veritatis explicabo aut laborum, animi quidem obcaecati dicta!",
-      image: require("../../assets/categories/sport-4.jpg"),
-    },
-    {
-      id: "5",
-      price: "2.99",
-      title: "New Cake",
-      description:
-        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum, quis veniam! Blanditiis perspiciatis quas, modi molestias, tempore aliquid nihil id commodi incidunt veritatis explicabo aut laborum, animi quidem obcaecati dicta!",
-      image: require("../../assets/categories/sport-5.jpg"),
-    },
-    {
-      id: "6",
-      price: "2.99",
-      title: "New Cake",
-      description:
-        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum, quis veniam! Blanditiis perspiciatis quas, modi molestias, tempore aliquid nihil id commodi incidunt veritatis explicabo aut laborum, animi quidem obcaecati dicta!",
-      image: require("../../assets/categories/children-1.jpg"),
-    },
-    {
-      id: "6",
-      price: "2.99",
-      title: "New Cake",
-      description:
-        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum, quis veniam! Blanditiis perspiciatis quas, modi molestias, tempore aliquid nihil id commodi incidunt veritatis explicabo aut laborum, animi quidem obcaecati dicta!",
-      image: require("../../assets/categories/children-2.jpg"),
-    },
-    {
-      id: "7",
-      price: "2.99",
-      title: "New Cake",
-      description:
-        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum, quis veniam! Blanditiis perspiciatis quas, modi molestias, tempore aliquid nihil id commodi incidunt veritatis explicabo aut laborum, animi quidem obcaecati dicta!",
-      image: require("../../assets/categories/children-3.jpg"),
-    },
-    {
-      id: "8",
-      price: "2.99",
-      title: "New Cake",
-      description:
-        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum, quis veniam! Blanditiis perspiciatis quas, modi molestias, tempore aliquid nihil id commodi incidunt veritatis explicabo aut laborum, animi quidem obcaecati dicta!",
-      image: require("../../assets/categories/children-4.jpg"),
-    },
-    {
-      id: "9",
-      price: "2.99",
-      title: "New Cake",
-      description:
-        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum, quis veniam! Blanditiis perspiciatis quas, modi molestias, tempore aliquid nihil id commodi incidunt veritatis explicabo aut laborum, animi quidem obcaecati dicta!",
-      image: require("../../assets/categories/children-5.jpg"),
-    },
-    {
-      id: "10",
-      price: "2.99",
-      title: "New Cake",
-      description:
-        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum, quis veniam! Blanditiis perspiciatis quas, modi molestias, tempore aliquid nihil id commodi incidunt veritatis explicabo aut laborum, animi quidem obcaecati dicta!",
-      image: require("../../assets/categories/children-6.jpg"),
-    },
-    {
-      id: "11",
-      price: "2.99",
-      title: "New Cake",
-      description:
-        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum, quis veniam! Blanditiis perspiciatis quas, modi molestias, tempore aliquid nihil id commodi incidunt veritatis explicabo aut laborum, animi quidem obcaecati dicta!",
-      image: require("../../assets/categories/birthday-1.jpg"),
-    },
-    {
-      id: "12",
-      price: "2.99",
-      title: "New Cake",
-      description:
-        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum, quis veniam! Blanditiis perspiciatis quas, modi molestias, tempore aliquid nihil id commodi incidunt veritatis explicabo aut laborum, animi quidem obcaecati dicta!",
-      image: require("../../assets/categories/birthday-2.jpg"),
-    },
-    {
-      id: "13",
-      price: "2.99",
-      title: "New Cake",
-      description:
-        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum, quis veniam! Blanditiis perspiciatis quas, modi molestias, tempore aliquid nihil id commodi incidunt veritatis explicabo aut laborum, animi quidem obcaecati dicta!",
-      image: require("../../assets/categories/birthday-3.jpg"),
-    },
-    {
-      id: "14",
-      price: "2.99",
-      title: "New Cake",
-      description:
-        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum, quis veniam! Blanditiis perspiciatis quas, modi molestias, tempore aliquid nihil id commodi incidunt veritatis explicabo aut laborum, animi quidem obcaecati dicta!",
-      image: require("../../assets/categories/birthday-4.jpg"),
-    },
-    {
-      id: "15",
-      price: "2.99",
-      title: "New Cake",
-      description:
-        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum, quis veniam! Blanditiis perspiciatis quas, modi molestias, tempore aliquid nihil id commodi incidunt veritatis explicabo aut laborum, animi quidem obcaecati dicta!",
-      image: require("../../assets/categories/birthday-5.jpg"),
-    },
-    {
-      id: "16",
-      price: "2.99",
-      title: "New Cake",
-      description:
-        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum, quis veniam! Blanditiis perspiciatis quas, modi molestias, tempore aliquid nihil id commodi incidunt veritatis explicabo aut laborum, animi quidem obcaecati dicta!",
-      image: require("../../assets/categories/birthday-6.jpg"),
-    },
-    {
-      id: "17",
-      price: "2.99",
-      title: "New Cake",
-      description:
-        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum, quis veniam! Blanditiis perspiciatis quas, modi molestias, tempore aliquid nihil id commodi incidunt veritatis explicabo aut laborum, animi quidem obcaecati dicta!",
-      image: require("../../assets/categories/birthday-7.jpg"),
-    },
-    {
-      id: "18",
-      price: "2.99",
-      title: "New Cake",
-      description:
-        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum, quis veniam! Blanditiis perspiciatis quas, modi molestias, tempore aliquid nihil id commodi incidunt veritatis explicabo aut laborum, animi quidem obcaecati dicta!",
-      image: require("../../assets/categories/birthday-1.jpg"),
-    },
-  ];
+  useEffect(() => {  
+    getProduct(id);
+    
+    console.log("isSuccess", isSuccess);
+    
+    // eslint-disable-next-line
+  }, [isLoading]);
+  
+  // if(isSuccess){
+  //   return toast("Your order has been received")
+  // }
 
-  const product = PRODUCTS_LIST.find((product) => product.id === id);
+  const handleChange = (e) => {
+    console.log("ran");
+    setInputs(prevState => ({
+      ...prevState,
+      name: product.name,
+      price: product.price,
+      quantity: quantity,
+      [e.target.id]: e.target.value
+    }))
 
+    console.log("inputs", inputs);
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    createOrder(inputs);
+    setInputs({
+      name: "",
+      price: "",
+      size: "",
+      flavour: "",
+      message: "",
+      details: "",
+      quantity: ""
+    });
+    setQuantity(1);
+  };
+  
   const renderBanner = () => {
     return (
       <div className="bg-[#F72238] p-5">
@@ -186,39 +85,45 @@ const Product = () => {
           <div className="mr-10 flex-1 bg-red-6000">
             <img
               src={product.image}
-              alt={product.title}
+              alt={product.name}
               className="w-full h-[600px] object-contain"
             />
           </div>
           <div className="flex-1">
-            <h2 className="text-4xl text-[#FEBD01]">{product.title}</h2>
+            <h2 className="text-4xl text-[#FEBD01]">{product.name}</h2>
             <h3 className="text-2xl text-[#F72238]">&#8358;{product.price}</h3>
-            <form action="#" className="mt-5">
+            <form onSubmit={handleSubmit} className="mt-5">
               <div className="w-full">
                 <label htmlFor="category">Choose Size</label>
                 <select
-                  id="category"
-                  class="bg-gray-50 border border-gray-300 pt-6 pb-6 mr-10 text-gray-900 text-sm rounded-lg  block w-full p-2.5"
+                  id="size"
+                  required
+                  value={inputs.size}
+                  onChange={(e) => handleChange(e)}
+                  className="bg-gray-50 border border-gray-300 pt-6 pb-6 mr-10 text-gray-900 text-sm rounded-lg  block w-full p-2.5"
                 >
-                  <option selected>Choose a Cake Size</option>
-                  <option value="10">10""</option>
-                  <option value="20">20""</option>
-                  <option value="30">30""</option>
+                  <option>Choose a Cake Size</option>
+                  <option value="10" onChange={(e) => handleChange(e)}>10""</option>
+                  <option value="20" onChange={(e) => handleChange(e)}>20""</option>
+                  <option value="30" onChange={(e) => handleChange(e)}>30""</option>
                 </select>
               </div>
 
               <br />
 
               <div className="w-full">
-                <label htmlFor="category">Choose Flavour</label>
+                <label htmlFor="flavour">Choose Flavour</label>
                 <select
-                  id="category"
-                  class="bg-gray-50 border border-gray-300 pt-6 pb-6 mr-10 text-gray-900 text-sm rounded-lg  block w-full p-2.5"
+                  id="flavour"
+                  onChange={(e) => handleChange(e)}
+                  required
+                  value={inputs.flavour}
+                  className="bg-gray-50 border border-gray-300 pt-6 pb-6 mr-10 text-gray-900 text-sm rounded-lg  block w-full p-2.5"
                 >
-                  <option selected>Choose a Cake Size</option>
-                  <option value="10">Vanilla</option>
-                  <option value="20">strawberry</option>
-                  <option value="30">apple</option>
+                  <option>Choose a Cake Flavour</option>
+                  <option value="vanilla"  onChange={(e) => handleChange(e)}>Vanilla</option>
+                  <option value="strawberry"  onChange={(e) => handleChange(e)}>strawberry</option>
+                  <option value="apple"  onChange={(e) => handleChange(e)}>apple</option>
                 </select>
               </div>
 
@@ -229,6 +134,10 @@ const Product = () => {
                   type="text"
                   placeholder="Enter Cake Message"
                   className="rounded border p-5 w-full mb-2 mt-2"
+                  onChange={(e) => handleChange(e)}
+                  id="message"
+                  required
+                  value={inputs.message}
                 />
                 <span>What Message would like on Your cake*</span>
               </div>
@@ -237,22 +146,26 @@ const Product = () => {
                 <label htmlFor="message">Order Details</label>
                 <br />
                 <textarea
-                  placeholder="Enter Cake Message"
+                  placeholder="Enter Order details. e.g address and phone number"
                   className="rounded border p-5 w-full mb-2 mt-2"
+                  id="details"
+                  required
+                  onChange={(e) => handleChange(e)}
+                  value={inputs.details}
                 ></textarea>
                 <span>
                   Please note, some designs may incur additional cost*
                 </span>
               </div>
 
-              <div class="flex justify-center w-1/5 mt-6 pl-32">
+              <div className="flex justify-center w-1/5 mt-6 pl-32">
                 {quantity >= 0 && (
                   <div
                     onClick={() => setQuantity(quantity - 1)}
                     className="mt-1"
                   >
                     <svg
-                      class="fill-current text-gray-600 w-3"
+                      className="fill-current text-gray-600 w-3"
                       viewBox="0 0 448 512"
                     >
                       <path d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z" />
@@ -261,14 +174,15 @@ const Product = () => {
                 )}
 
                 <input
-                  class="mx-2 border text-center w-8"
+                  className="mx-2 border text-center w-8"
                   type="text"
                   value={quantity}
+                  onChange={() => setQuantity(quantity - 1)}
                 />
 
                 <div onClick={() => setQuantity(quantity + 1)} className="mt-1">
                   <svg
-                    class="fill-current text-gray-600 w-3"
+                    className="fill-current text-gray-600 w-3"
                     viewBox="0 0 448 512"
                   >
                     <path d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z" />
@@ -305,7 +219,10 @@ const Product = () => {
   return (
     <div>
       {renderBanner()}
-      <div className="container mx-auto">{renderProductDetail()}</div>
+      <div className="container mx-auto">
+        { isLoading && <Spinner /> }
+        {renderProductDetail()}
+      </div>
     </div>
   );
 };
