@@ -3,7 +3,7 @@ import { createContext } from "react";
 import orderReducer from "./OrdersReducer";
 import axios from "axios";
 
-const BASE_URL = process.env.REACT_APP_ENV === 'development' ? process.env.REACT_APP_BASE_URL_PROD : "http://localhost:5000";
+const BASE_URL = process.env.REACT_APP_ENV === 'development' ? "http://localhost:5000" : process.env.REACT_APP_BASE_URL_PROD 
 
 export const OrderContext = createContext();
 
