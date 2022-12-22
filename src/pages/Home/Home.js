@@ -13,14 +13,15 @@ import "./Home.css";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { ProductContext } from "../../context/productsContext/ProductsContext";
-import Spinner from "../../components/Spinner/Spinner";
+// import Spinner from "../../components/Spinner/Spinner";
 
 const Home = () => {
-  const { products, getProducts, isLoading, isSuccess } =
+  const { products, getProducts} =
     useContext(ProductContext);
 
   useEffect(() => {
     getProducts();
+     // eslint-disable-next-line 
   }, []);
 
   const CATEGORIES_LIST = [

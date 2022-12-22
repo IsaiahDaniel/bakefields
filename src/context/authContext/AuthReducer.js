@@ -11,7 +11,6 @@ const authReducer = (state, { type, payload }) => {
       };
 
     case "REGISTER_ERROR":
-      console.log("REGISTER_ERROR CALLED");
       return {
         ...state,
         token: null,

@@ -12,7 +12,9 @@ import { useEffect, useContext } from "react";
 import { ProductContext } from "../../context/productsContext/ProductsContext";
 import Spinner from "../../components/Spinner/Spinner";
 import { OrderContext } from "../../context/ordersContext/OrderContext";
-import { toast } from "react-toastify";
+// import { toast } from "react-toastify";
+// import Modal from "../../components/Modal/Modal";
+// import { AuthContext } from "../../context/authContext/AuthContext";
 
 const Product = () => {
   const { id } = useParams();
@@ -20,40 +22,39 @@ const Product = () => {
   const [inputs, setInputs] = useState({
     name: "",
     price: "",
-    size: "",
+    size: "10",
     flavour: "",
     message: "",
     details: "",
-    quantity: ""
-  })
+    quantity: "",
+  });
   const [quantity, setQuantity] = useState(1);
-  const { product, isLoading, getProduct, isSuccess } = useContext(ProductContext);
+  const { product, isLoading, getProduct } =
+    useContext(ProductContext);
   const { createOrder } = useContext(OrderContext);
+  // const { token } = useContext(AuthContext)
+  // const [productPrice, setProductPrice] = useState(product.price);
 
-  useEffect(() => {  
+  let token;
+
+  useEffect(() => {
     getProduct(id);
-    
-    console.log("isSuccess", isSuccess);
-    
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    token = localStorage.token;
+
     // eslint-disable-next-line
-  }, [isLoading]);
-  
-  // if(isSuccess){
-  //   return toast("Your order has been received")
-  // }
+  }, [isLoading, token]);
 
   const handleChange = (e) => {
-    console.log("ran");
-    setInputs(prevState => ({
+    setInputs((prevState) => ({
       ...prevState,
       name: product.name,
       price: product.price,
       quantity: quantity,
-      [e.target.id]: e.target.value
-    }))
-
-    console.log("inputs", inputs);
-  }
+      [e.target.id]: e.target.value,
+    }));
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -65,11 +66,11 @@ const Product = () => {
       flavour: "",
       message: "",
       details: "",
-      quantity: ""
+      quantity: "",
     });
     setQuantity(1);
   };
-  
+
   const renderBanner = () => {
     return (
       <div className="bg-[#F72238] p-5">
@@ -82,6 +83,7 @@ const Product = () => {
     return (
       <div className="mt-5 md:mt-10 mb-10 p-3 md:p-0">
         <div className="flex-col md:flex md:flex-row">
+          {/* <Modal /> */}
           <div className="mr-10 flex-1 bg-red-6000">
             <img
               src={product.image}
@@ -89,9 +91,34 @@ const Product = () => {
               className="w-full h-[600px] object-contain"
             />
           </div>
+
           <div className="flex-1">
             <h2 className="text-4xl text-[#FEBD01]">{product.name}</h2>
-            <h3 className="text-2xl text-[#F72238]">&#8358;{product.price}</h3>
+
+            {inputs.size === "10" && (
+              <h3 className="text-2xl text-[#F72238]">
+                &#8358; {product.price}
+              </h3>
+            )}
+
+            {inputs.size === "20" && (
+              <h3 className="text-2xl text-[#F72238]">
+                &#8358; {product.price_20}
+              </h3>
+            )}
+
+            {inputs.size === "30" && (
+              <h3 className="text-2xl text-[#F72238]">
+                &#8358; {product.price_30}
+              </h3>
+            )}
+
+            { localStorage.length === 0  ? (
+              <p className="bg-blue-400 p-3 text-white rounded-md mt-4">
+                Please login to complete your order, <br /> or call 0812764783 to complete it offline
+              </p>
+            ) : ""}
+
             <form onSubmit={handleSubmit} className="mt-5">
               <div className="w-full">
                 <label htmlFor="category">Choose Size</label>
@@ -103,9 +130,15 @@ const Product = () => {
                   className="bg-gray-50 border border-gray-300 pt-6 pb-6 mr-10 text-gray-900 text-sm rounded-lg  block w-full p-2.5"
                 >
                   <option>Choose a Cake Size</option>
-                  <option value="10" onChange={(e) => handleChange(e)}>10""</option>
-                  <option value="20" onChange={(e) => handleChange(e)}>20""</option>
-                  <option value="30" onChange={(e) => handleChange(e)}>30""</option>
+                  <option value="10" onChange={(e) => handleChange(e)}>
+                    10"" ({product.price})
+                  </option>
+                  <option value="20" onChange={(e) => handleChange(e)}>
+                    20"" ({product.price_20})
+                  </option>
+                  <option value="30" onChange={(e) => handleChange(e)}>
+                    30"" ({product.price_30})
+                  </option>
                 </select>
               </div>
 
@@ -121,9 +154,15 @@ const Product = () => {
                   className="bg-gray-50 border border-gray-300 pt-6 pb-6 mr-10 text-gray-900 text-sm rounded-lg  block w-full p-2.5"
                 >
                   <option>Choose a Cake Flavour</option>
-                  <option value="vanilla"  onChange={(e) => handleChange(e)}>Vanilla</option>
-                  <option value="strawberry"  onChange={(e) => handleChange(e)}>strawberry</option>
-                  <option value="apple"  onChange={(e) => handleChange(e)}>apple</option>
+                  <option value="vanilla" onChange={(e) => handleChange(e)}>
+                    Vanilla
+                  </option>
+                  <option value="strawberry" onChange={(e) => handleChange(e)}>
+                    strawberry
+                  </option>
+                  <option value="apple" onChange={(e) => handleChange(e)}>
+                    apple
+                  </option>
                 </select>
               </div>
 
@@ -194,7 +233,7 @@ const Product = () => {
                 </div>
               </div>
 
-              <Button text={"Place Order"} primaryInverse />
+              <Button text={"Place Order"} primaryInverse disabled={localStorage.length === 0} />
             </form>
             <div className="mt-10">
               <h3 className="text-2xl">Talk to us on Social</h3>
@@ -206,7 +245,7 @@ const Product = () => {
                   <AiOutlineInstagram size={24} color="white" />
                 </div>
                 <div className="rounded-lg border border-[#F72238] bg-[#F72238] p-2 mr-3">
-                  <AiOutlineWhatsApp size={24} color="white"  />
+                  <AiOutlineWhatsApp size={24} color="white" />
                 </div>
               </div>
             </div>
@@ -220,7 +259,7 @@ const Product = () => {
     <div>
       {renderBanner()}
       <div className="container mx-auto">
-        { isLoading && <Spinner /> }
+        {isLoading && <Spinner />}
         {renderProductDetail()}
       </div>
     </div>

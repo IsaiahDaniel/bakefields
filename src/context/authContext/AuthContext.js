@@ -4,7 +4,7 @@ import { createContext } from "react";
 import axios from "axios";
 import authReducer from "./AuthReducer";
 
-const BASE_URL = "http://localhost:5000";
+const BASE_URL = process.env.REACT_APP_ENV === 'development' ? process.env.REACT_APP_BASE_URL_PROD : "http://localhost:5000";
 
 export const AuthContext = createContext();
 
