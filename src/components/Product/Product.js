@@ -9,7 +9,7 @@ const Product = ({ product }) => {
         <img
           src={product.image}
           alt={product.title}
-          style={{ width: "400px", height: "400px" }}
+          // style={{ width: "400px", height: "400px" }}
           className="object-cover w-full"
         />
       </div>
