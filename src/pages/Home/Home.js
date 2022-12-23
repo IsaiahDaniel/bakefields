@@ -179,11 +179,13 @@ const Home = () => {
               />
             </div>
             <div>
-              <img
-                src={require("../../assets/lets-chat.png")}
-                alt="needHelp"
-                style={{ height: "200px", width: "200px" }}
-              />
+              <Link to="/https://wa.me/message/AKIABSVUJFMZJ1">
+                <img
+                  src={require("../../assets/lets-chat.png")}
+                  alt="needHelp"
+                  style={{ height: "200px", width: "200px" }}
+                />
+              </Link>
             </div>
 
             <div>
@@ -221,10 +223,10 @@ const Home = () => {
             src={require("../../assets/refer-and-earn-1.png")}
             alt="needHelp"
             style={{ height: "150px", width: "200px" }}
-            className="mb-5"
+            // className="mb-5"
           />
           <img
-            src={needHelp}
+            src={require("../../assets/help-order.jpeg")}
             alt="needHelp"
             style={{ height: "150px", width: "200px" }}
           />
