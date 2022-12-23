@@ -173,7 +173,7 @@ const Home = () => {
           <div className="md:grid gap-2 grid-cols-2 hidden">
             <div>
               <img
-                src={needHelp}
+                src={require("../../assets/help-order.jpeg")}
                 alt="needHelp"
                 style={{ height: "200px", width: "200px" }}
               />
