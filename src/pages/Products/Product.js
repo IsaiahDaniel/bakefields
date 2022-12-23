@@ -12,6 +12,7 @@ import { useEffect, useContext } from "react";
 import { ProductContext } from "../../context/productsContext/ProductsContext";
 import Spinner from "../../components/Spinner/Spinner";
 import { OrderContext } from "../../context/ordersContext/OrderContext";
+import { getProduct } from "../../context/productsContext/ProductsActions";
 // import { toast } from "react-toastify";
 // import Modal from "../../components/Modal/Modal";
 // import { AuthContext } from "../../context/authContext/AuthContext";
@@ -29,22 +30,21 @@ const Product = () => {
     quantity: "",
   });
   const [quantity, setQuantity] = useState(1);
-  const { product, isLoading, getProduct } =
+  const { product, isLoading, dispatch } =
     useContext(ProductContext);
   const { createOrder } = useContext(OrderContext);
-  // const { token } = useContext(AuthContext)
-  // const [productPrice, setProductPrice] = useState(product.price);
-
-  let token;
 
   useEffect(() => {
-    getProduct(id);
+    const singleProduct = async () => {
+      const item = await getProduct(id);
+      console.log("item", item);
+      dispatch({ type: "GET_PRODUCT", payload: item.data.data });
+    }
 
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    token = localStorage.token;
+    singleProduct();
 
     // eslint-disable-next-line
-  }, [isLoading, token]);
+  }, [isLoading]);
 
   const handleChange = (e) => {
     setInputs((prevState) => ({
@@ -84,11 +84,13 @@ const Product = () => {
       <div className="mt-5 md:mt-10 mb-10 p-3 md:p-0">
         <div className="flex-col md:flex md:flex-row">
           {/* <Modal /> */}
-          <div className="mr-10 flex-1 bg-red-6000">
+          <div className="flex-1 mx-auto">
             <img
               src={product.image}
               alt={product.name}
-              className="w-full h-[600px] object-contain"
+              // className="w-[600px] h-[600px] object-cover"
+              style={{ width: "500px", height: "700px" }}
+              className="object-cover w-full"
             />
           </div>
 

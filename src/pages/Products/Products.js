@@ -2,19 +2,22 @@ import { useEffect, useContext } from "react";
 
 import { Button, Product } from "../../components";
 import { ProductContext } from "../../context/productsContext/ProductsContext";
+import { getProducts } from "../../context/productsContext/ProductsActions";
+import Spinner from "../../components/Spinner/Spinner";
 
 const Products = () => {
-  const { getProducts, products, filterCategories } = useContext(ProductContext);
-
+  const { products, filterCategories, dispatch, isLoading } = useContext(ProductContext);
 
   useEffect(() => {
-    getProducts();
-    // console.log("products", products);
-    // eslint-disable-next-line
-  }, []);
+    const allProduct = async () => {
+      dispatch({ type: "SET_LOADING" });
+      const item = await getProducts();
+      dispatch({ type: "GET_PRODUCTS", payload: item.data.data });
+    }
+    allProduct();
+  }, [dispatch]);
 
   const handleChange = (e) => {
-    console.log("e.target.value", e.target.value);
     filterCategories(e.target.value);
   }
 
@@ -43,6 +46,7 @@ const Products = () => {
         </div>
       </div>
       <h2 className="text-4xl mb-6 text-center mt-5 md:p-0">Our cakes</h2>
+      { isLoading && <Spinner /> }
       <div className="grid grid-cols-2 gap-8 p-5 md:p-0 xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-3">
         {!products && <h3 className="text-center p-4">No Products yet.</h3>}
         {products &&

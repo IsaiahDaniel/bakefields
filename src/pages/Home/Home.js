@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import { Button, Product } from "../../components";
 import Carousel from "react-elastic-carousel";
 import { AiOutlineSearch } from "react-icons/ai";
-// import showcase from "../../assets/showcase-1.jpeg";
 import needHelp from "../../assets/help-order.gif";
 
 import { AiOutlineRight } from "react-icons/ai";
@@ -13,16 +12,23 @@ import "./Home.css";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { ProductContext } from "../../context/productsContext/ProductsContext";
-// import Spinner from "../../components/Spinner/Spinner";
+import { getProducts } from "../../context/productsContext/ProductsActions";
+import Spinner from "../../components/Spinner/Spinner";
 
 const Home = () => {
-  const { products, getProducts} =
+  const { products, dispatch, isLoading } =
     useContext(ProductContext);
 
   useEffect(() => {
-    getProducts();
-     // eslint-disable-next-line 
-  }, []);
+    const allProducts = async () => {
+      dispatch({ type: "SET_LOADING"  })
+      const item = await getProducts();
+      dispatch({ type: "GET_PRODUCTS", payload: item.data.data });
+    }
+    
+    allProducts();
+    
+  }, [dispatch]);
 
   const CATEGORIES_LIST = [
     {
@@ -207,6 +213,8 @@ const Home = () => {
         <h2 className="text-4xl text-center mt-10 mb-10">
           Top Selling Products
         </h2>
+
+        { isLoading && <Spinner /> }
 
         <div className="grid grid-cols-2 gap-8 xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-3">
           {products.map((product) => (

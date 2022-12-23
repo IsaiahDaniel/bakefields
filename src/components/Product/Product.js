@@ -3,14 +3,13 @@ import { Link } from "react-router-dom";
 import Rating from "../Rating/Rating";
 
 const Product = ({ product }) => {
-  console.log("product", );
   return (
     <Link to={`/product/${product._id}`}>
       <div className="shadow-lg md:justify-start justify-center">
         <img
           src={product.image}
           alt={product.title}
-          // style={{ width: "270px", height: "270px" }}
+          style={{ width: "400px", height: "400px" }}
           className="object-cover w-full"
         />
       </div>

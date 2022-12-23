@@ -2,7 +2,6 @@ import axios from "axios";
 import { useReducer } from "react";
 import { createContext } from "react";
 import productReducer from "./ProductsReducer";
-// import { useEffect } from "react";
 
 const BASE_URL = process.env.REACT_APP_ENV === 'development' ? "http://localhost:5000" : process.env.REACT_APP_BASE_URL_PROD 
 
@@ -19,32 +18,14 @@ const ProductsProvider = ({ children }) => {
 
   const [state, dispatch] = useReducer(productReducer, initialState);
 
-  const setLoading = () => dispatch({ type: "SET_LOADING" });
+  console.log("state", state);
 
-  const getProducts = async () => {
-    try {
-      setLoading();
-      const response = await axios.get(`${BASE_URL}/api/v1/products`);
-      dispatch({ type: "GET_PRODUCTS", payload: response.data.data });
-    } catch (error) {
-      console.log("Error", error);
-    }
-  };
 
-  const getProduct = async (id) => {
-    try {
-      setLoading();
-      const response = await axios.get(`${BASE_URL}/api/v1/products/${id}`);
-      dispatch({ type: "GET_PRODUCT", payload: response.data.data });
-    } catch (error) {
-      console.log("get product error", error);
-    }
-  };
 
   const filterCategories = async (category) => {
     try {
-      setLoading();
-      console.log("request ran....");
+      // setLoading();
+      // console.log("request ran....");
       const response = await axios.get(`${BASE_URL}/api/v1/products/filter/${category}`);
       console.log("response", response);
       dispatch({ type: "FILTER_PRODUCT", payload: response.data.data });
@@ -53,31 +34,12 @@ const ProductsProvider = ({ children }) => {
     }
   };
 
-  // useEffect(() => {
-  //   const getProducts = async () => {
-  //     try {
-  //         setLoading();
-  //         const response = await axios.get(`${BASE_URL}/api/v1/products`);
-  //         dispatch({ type: "GET_PRODUCTS", payload: response.data.data });
-  //     } catch (error) {
-  //         console.log("Error", error);
-  //     }
-  //   };
-
-  //   getProducts();
-  // }, []);
-
   return (
     <ProductContext.Provider
       value={{
-        isLoading: state.isLoading,
-        isError: state.isError,
-        isSuccess: state.isSuccess,
-        products: state.products,
-        product: state.product,
+        ...state,
+        dispatch,
         filterCategories,
-        getProducts,
-        getProduct,
       }}
     >
       {children}
