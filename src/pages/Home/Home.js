@@ -72,7 +72,7 @@ const Home = () => {
   const settings = {
     dots: true,
     infinite: true,
-    speed: 5000,
+    speed: 4000,
     autoplay: true,
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -135,7 +135,14 @@ const Home = () => {
                 </div>
                 <div>
                   <img
-                    src={require("../../assets/banner.png")}
+                    src={require("../../assets/slide-2.jpeg")}
+                    alt="banner"
+                    className="h-full xl:w-full md:w-full shadow-lg"
+                  />
+                </div>
+                <div>
+                  <img
+                    src={require("../../assets/slide-3.jpeg")}
                     alt="banner"
                     className="h-full xl:w-full md:w-full shadow-lg"
                   />
