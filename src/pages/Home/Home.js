@@ -14,20 +14,19 @@ import { useContext } from "react";
 import { ProductContext } from "../../context/productsContext/ProductsContext";
 import { getProducts } from "../../context/productsContext/ProductsActions";
 import Spinner from "../../components/Spinner/Spinner";
+import Slider from "react-slick";
 
 const Home = () => {
-  const { products, dispatch, isLoading } =
-    useContext(ProductContext);
+  const { products, dispatch, isLoading } = useContext(ProductContext);
 
   useEffect(() => {
     const allProducts = async () => {
-      dispatch({ type: "SET_LOADING"  })
+      dispatch({ type: "SET_LOADING" });
       const item = await getProducts();
       dispatch({ type: "GET_PRODUCTS", payload: item.data.data });
-    }
-    
+    };
+
     allProducts();
-    
   }, [dispatch]);
 
   const CATEGORIES_LIST = [
@@ -70,6 +69,15 @@ const Home = () => {
     { width: 1200, itemsToShow: 4 },
   ];
 
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 5000,
+    autoplay: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  };
+
   const renderShowcase = () => {
     return (
       <>
@@ -109,12 +117,30 @@ const Home = () => {
           </div>
 
           <div className="mr-3 flex-1">
-            <div>
+            {/* <div>
               <img
                 src={require("../../assets/banner.png")}
                 alt="banner"
                 className="h-full xl:w-full md:w-full shadow-lg"
               />
+            </div> */}
+            <div className="w-[325px] md:w-[700px] xl:w-[770px]">
+              <Slider {...settings}>
+                <div>
+                  <img
+                    src={require("../../assets/banner.png")}
+                    alt="banner"
+                    className="h-full xl:w-full md:w-full shadow-lg"
+                  />
+                </div>
+                <div>
+                  <img
+                    src={require("../../assets/banner.png")}
+                    alt="banner"
+                    className="h-full xl:w-full md:w-full shadow-lg"
+                  />
+                </div>
+              </Slider>
             </div>
             <div className="shadow-lg p-3 flex items-center justify-between mt-4">
               <div>
@@ -214,7 +240,7 @@ const Home = () => {
           Top Selling Products
         </h2>
 
-        { isLoading && <Spinner /> }
+        {isLoading && <Spinner />}
 
         <div className="grid grid-cols-2 gap-8 xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-3">
           {products.map((product) => (
