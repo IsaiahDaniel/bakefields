@@ -4,6 +4,7 @@ import { Button, Product } from "../../components";
 import { ProductContext } from "../../context/productsContext/ProductsContext";
 import { getProducts } from "../../context/productsContext/ProductsActions";
 import Spinner from "../../components/Spinner/Spinner";
+import { Link } from "react-router-dom";
 
 const Products = () => {
   const { products, filterCategories, dispatch, isLoading } = useContext(ProductContext);
@@ -53,7 +54,9 @@ const Products = () => {
           products.map((product) => (
             <div className="mb-10" key={product._id}>
               <Product product={product} />
-              <Button text="Order Now" />
+              <Link to={`/product/${product._id}`}>
+                <Button text="Order Now" />
+              </Link>
             </div>
           ))}
       </div>
