@@ -2,19 +2,18 @@ import React, { useEffect } from "react";
 import { Button, Product } from "../../components";
 import Carousel from "react-elastic-carousel";
 import { AiOutlineSearch } from "react-icons/ai";
-import needHelp from "../../assets/help-order.gif";
 
 import { AiOutlineRight } from "react-icons/ai";
 import { FaBirthdayCake, FaChild, FaBreadSlice } from "react-icons/fa";
 import { GiButterToast } from "react-icons/gi";
 
-import "./Home.css";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { ProductContext } from "../../context/productsContext/ProductsContext";
 import { getProducts } from "../../context/productsContext/ProductsActions";
 import Spinner from "../../components/Spinner/Spinner";
 import Slider from "react-slick";
+import "./Home.css";
 
 const Home = () => {
   const { products, dispatch, isLoading } = useContext(ProductContext);
@@ -179,28 +178,44 @@ const Home = () => {
 
           <div className="md:grid gap-2 grid-cols-2 hidden">
             <div>
-              <img
-                src={require("../../assets/help-order.jpeg")}
-                alt="needHelp"
-                style={{ height: "200px", width: "200px" }}
-              />
+              <a
+                href="https://wa.me/message/AKIABSVUJFMZJ1"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img
+                  src={require("../../assets/help-order.jpeg")}
+                  alt="needHelp"
+                  style={{ height: "200px", width: "200px" }}
+                />
+              </a>
             </div>
             <div>
-              <Link to="/https://wa.me/message/AKIABSVUJFMZJ1">
+              <a
+                href="https://wa.me/message/AKIABSVUJFMZJ1"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <img
                   src={require("../../assets/lets-chat.png")}
                   alt="needHelp"
                   style={{ height: "200px", width: "200px" }}
                 />
-              </Link>
+              </a>
             </div>
 
             <div>
-              <img
-                src={require("../../assets/refer-and-earn-1.png")}
-                alt="needHelp"
-                style={{ height: "200px", width: "200px" }}
-              />
+              <a
+                href="https://wa.me/message/AKIABSVUJFMZJ1"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img
+                  src={require("../../assets/refer-and-earn-1.png")}
+                  alt="needHelp"
+                  style={{ height: "200px", width: "200px" }}
+                />
+              </a>
             </div>
 
             <div>
@@ -220,23 +235,41 @@ const Home = () => {
             style={{ height: "150px", width: "200px" }}
             className="mb-5"
           />
-          <img
-            src={require("../../assets/lets-chat.png")}
-            alt="needHelp"
-            style={{ height: "150px", width: "200px" }}
-            className="mb-5"
-          />
-          <img
-            src={require("../../assets/refer-and-earn-1.png")}
-            alt="needHelp"
-            style={{ height: "150px", width: "200px" }}
-            // className="mb-5"
-          />
-          <img
-            src={require("../../assets/help-order.jpeg")}
-            alt="needHelp"
-            style={{ height: "150px", width: "200px" }}
-          />
+          <a
+            href="https://wa.me/message/AKIABSVUJFMZJ1"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img
+              src={require("../../assets/lets-chat.png")}
+              alt="needHelp"
+              style={{ height: "150px", width: "200px" }}
+              className="mb-5"
+            />
+          </a>
+          <a
+            href="https://wa.me/message/AKIABSVUJFMZJ1"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img
+              src={require("../../assets/refer-and-earn-1.png")}
+              alt="needHelp"
+              style={{ height: "150px", width: "200px" }}
+              // className="mb-5"
+            />
+          </a>
+          <a
+            href="https://wa.me/message/AKIABSVUJFMZJ1"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img
+              src={require("../../assets/help-order.jpeg")}
+              alt="needHelp"
+              style={{ height: "150px", width: "200px" }}
+            />
+          </a>
         </div>
       </>
     );
