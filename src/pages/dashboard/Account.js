@@ -7,8 +7,6 @@ const Account = () => {
 
   const { user } = useContext(AuthContext);
 
-  console.log(user)
-
   return (
     <div className="mx-auto container mt-10 mb-10 p-5 md:p-5">
       <div className="flex-col md:flex-row md:flex items-start">

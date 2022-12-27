@@ -8,7 +8,6 @@ import { useContext } from "react";
 import { AuthContext } from "../../context/authContext/AuthContext";
 import { useEffect } from "react";
 import Spinner from "../../components/Spinner/Spinner";
-import { toast } from "react-toastify";
 
 const Login = () => {
   const { isSuccess, isLoading, isError, message, loginUser } =
@@ -21,11 +20,6 @@ const Login = () => {
       navigate("/dashboard");
     }
 
-    console.log("isError", isError);
-
-    if (isError) {
-      return toast(message);
-    }
   }, [isSuccess, isError, message, navigate]);
 
   const [input, setInputs] = useState({
@@ -58,7 +52,9 @@ const Login = () => {
       <div className="flex-1 bg-[#FCFCFC] h-screen p-10 w-full md:w-[60%] mb-10">
         <div className="w-full md:w-[60%] mx-auto">
           <h2 className="text-4xl text-center font-bold">Welcome to Midbite</h2>
-          <h3 className="text-center mt-5">Sign Into Your Account</h3>
+          <h3 className="text-center mt-5 mb-4">Sign Into Your Account</h3>
+
+          { isError && <p className="text-red-400">{message}</p> }
 
           <form onSubmit={handleSubmit}>
             <Input

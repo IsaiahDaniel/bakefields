@@ -13,6 +13,7 @@ import { ProductContext } from "../../context/productsContext/ProductsContext";
 import Spinner from "../../components/Spinner/Spinner";
 import { OrderContext } from "../../context/ordersContext/OrderContext";
 import { getProduct } from "../../context/productsContext/ProductsActions";
+import { toast } from "react-toastify";
 // import { toast } from "react-toastify";
 // import Modal from "../../components/Modal/Modal";
 // import { AuthContext } from "../../context/authContext/AuthContext";
@@ -28,29 +29,34 @@ const Product = () => {
     message: "",
     details: "",
     quantity: "",
+    image: ""
   });
   const [quantity, setQuantity] = useState(1);
   const { product, isLoading, dispatch } =
     useContext(ProductContext);
-  const { createOrder } = useContext(OrderContext);
+  const { createOrder, isSuccess } = useContext(OrderContext);
 
   useEffect(() => {
     const singleProduct = async () => {
       const item = await getProduct(id);
-      console.log("item", item);
       dispatch({ type: "GET_PRODUCT", payload: item.data.data });
     }
 
     singleProduct();
 
+    if(isSuccess){
+      toast("Your order has been received");
+    }
     // eslint-disable-next-line
-  }, [isLoading]);
+  }, [isLoading, isSuccess]);
+
 
   const handleChange = (e) => {
     setInputs((prevState) => ({
       ...prevState,
       name: product.name,
       price: product.price,
+      image: product.image,
       quantity: quantity,
       [e.target.id]: e.target.value,
     }));
@@ -198,6 +204,8 @@ const Product = () => {
                   Please note, some designs may incur additional cost*
                 </span>
               </div>
+
+              { quantity }
 
               <div className="flex justify-center w-1/5 mt-6 pl-32">
                 {quantity >= 0 && (

@@ -3,6 +3,7 @@ import { createContext } from "react";
 
 import axios from "axios";
 import authReducer from "./AuthReducer";
+import { useEffect } from "react";
 
 const BASE_URL = process.env.REACT_APP_ENV === 'development' ? "http://localhost:5000" : process.env.REACT_APP_BASE_URL_PROD 
 
@@ -15,14 +16,21 @@ export const AuthProvider = ({ children }) => {
     isLoading: false,
     message: "",
     user: "",
-    token: null,
+    token: JSON.parse(localStorage.getItem("token")) ? JSON.parse(localStorage.getItem("token")) : null,
   };
 
   const [state, dispatch] = useReducer(authReducer, initialState);
 
-  const setLoading = () => dispatch({ type: "SET_LOADING" });
+  useEffect(() => {
+    const user = JSON.parse(localStorage.getItem("token"));
 
-  // console.log("Auth state", state);
+    if(user){
+      dispatch({ type: "LOGIN_USER", payload: { user: user.data, token: user.token } });
+    }
+
+  }, []);
+
+  const setLoading = () => dispatch({ type: "SET_LOADING" });
 
   const registerUser = async (userData) => {
     setLoading();
@@ -60,10 +68,8 @@ export const AuthProvider = ({ children }) => {
         }
       });
   
-      console.log(response);
-  
       if(response.status === 200){
-        localStorage.setItem("token", JSON.stringify(response.data.token));
+        localStorage.setItem("token", JSON.stringify(response.data));
       }
   
       dispatch({ type: "LOGIN_USER", payload: { user: response.data.data, token: response.data.token } });
@@ -77,7 +83,9 @@ export const AuthProvider = ({ children }) => {
 
   const logout = () => {
     localStorage.removeItem("token");
+    dispatch({ type: "RESET" });
   };
+
 
   return (
     <AuthContext.Provider

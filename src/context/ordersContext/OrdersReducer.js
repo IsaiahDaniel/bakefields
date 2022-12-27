@@ -1,17 +1,38 @@
 const orderReducer = (state, { type, payload }) => {
-    switch(type){
+  switch (type) {
+    case "CREATE_ORDER":
+      return {
+        ...state,
+        orders: {},
+        isSuccess: true,
+        isLoading: false,
+      };
 
-        case "CREATE_ORDER":
-            return {
-                ...state,
-                orders: {},
-                isLoading: false
-            }
+    case "GET_ORDER":
+      return {
+        ...state,
+        orders: payload,
+        isLoading: false,
+      };
 
-        default:
-            return state;
-    }
-}
+    case "SET_LOADING":
+      return {
+        ...state,
+        isLoading: true,
+      };
 
+    case "RESET":
+        return {
+            isSuccess: false,
+            isError: false,
+            isLoading: false,
+            message: "",
+            orders: {}
+        }
+
+    default:
+      return state;
+  }
+};
 
 export default orderReducer;

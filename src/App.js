@@ -16,6 +16,7 @@ import OrderProvider from "./context/ordersContext/OrderContext";
 import "react-toastify/dist/ReactToastify.css";
 import ReturnPolicy from "./pages/Return/Return";
 import About from "./pages/About/About";
+import PrivateRoute from "./utils/PrivateRoute";
 
 const App = () => {
   return (
@@ -28,14 +29,17 @@ const App = () => {
               <Route path="/" element={<Home />} />
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
-              <Route path="/dashboard" element={<Dashboard />} />
-              <Route path="/dashboard/complain" element={<Complain />} />
-              <Route path="/dashboard/account" element={<Account />} />
-              <Route path="/dashboard/orders" element={<Orders />} />
+
               <Route path="/products" element={<Products />} />
               <Route path="/product/:id" element={<Product />} />
               <Route path="/return-policy" element={<ReturnPolicy />} />
               <Route path="/about" element={<About />} />
+              <Route element={<PrivateRoute />}>
+                <Route path="/dashboard" element={<Dashboard />} />
+                <Route path="/dashboard/complain" element={<Complain />} />
+                <Route path="/dashboard/account" element={<Account />} />
+                <Route path="/dashboard/orders" element={<Orders />} />
+              </Route>
             </Routes>
             <Footer />
           </Router>

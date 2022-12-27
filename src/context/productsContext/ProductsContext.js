@@ -18,10 +18,6 @@ const ProductsProvider = ({ children }) => {
 
   const [state, dispatch] = useReducer(productReducer, initialState);
 
-  console.log("state", state);
-
-
-
   const filterCategories = async (category) => {
     try {
       // setLoading();

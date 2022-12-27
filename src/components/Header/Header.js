@@ -7,6 +7,7 @@ import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import { AiOutlineInstagram, AiOutlineWhatsApp } from "react-icons/ai";
 import { CgLogOut } from "react-icons/cg";
 import { FiFacebook } from "react-icons/fi";
+import { CgProfile } from "react-icons/cg";
 
 import logo from "../../assets/logo.png";
 import { useContext } from "react";
@@ -67,14 +68,25 @@ const Header = () => {
                 </Link>
               </li>
             ) : (
-              <li onClick={() => logout()}>
-                <Link to="/login">
-                  <div className="flex items-center flex-col">
-                    <CgLogOut size={24} />
-                    <p>Logout</p>
-                  </div>
-                </Link>
-              </li>
+              <>
+                <li>
+                  <Link to="/dashboard">
+                    <div className="flex items-center flex-col mr-4">
+                      <CgProfile size={24} />
+                      <p>Dashboard</p>
+                    </div>
+                  </Link>
+                </li>
+
+                <li onClick={() => logout()}>
+                  <Link to="/login">
+                    <div className="flex items-center flex-col">
+                      <CgLogOut size={24} />
+                      <p>Logout</p>
+                    </div>
+                  </Link>
+                </li>
+              </>
             )}
           </ul>
 
@@ -108,7 +120,8 @@ const Header = () => {
                 <li className="mb-5" onClick={() => setShowMenu(false)}>
                   <Link to="/products">
                     <div className="flex items-center">
-                      <SiCakephp size={24} style={{ marginRight: 10 }} />
+                      <SiCakephp size={24}  />
+                      {/* style={{ marginRight: 10 }} */}
                       <p>Products</p>
                     </div>
                   </Link>
@@ -118,24 +131,35 @@ const Header = () => {
                   {token == null ? (
                     <li>
                       <Link to="/login">
-                        <div className="flex items-center ">
+                        <div className="flex items-center">
                           <AiOutlineLogin
                             size={24}
-                            style={{ marginRight: 10 }}
+                            // style={{ marginRight: 10 }}
                           />
                           <p>Login/Register</p>
                         </div>
                       </Link>
                     </li>
                   ) : (
-                    <li onClick={() => logout()}>
-                      <Link to="/login">
-                        <div className="flex items-center ">
-                          <CgLogOut size={24} style={{ marginRight: 10 }} />
-                          <p>Logout</p>
-                        </div>
-                      </Link>
-                    </li>
+                    <>
+                      <li className="mb-5">
+                        <Link to="/dashboard">
+                          <div className="flex items-center">
+                            <CgProfile size={24} />
+                            <p>Dashboard</p>
+                          </div>
+                        </Link>
+                      </li>
+
+                      <li onClick={() => logout()}>
+                        <Link to="/login">
+                          <div className="flex items-center ">
+                            <CgLogOut size={24} />
+                            <p>Logout</p>
+                          </div>
+                        </Link>
+                      </li>
+                    </>
                   )}
                 </div>
 

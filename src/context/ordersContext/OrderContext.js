@@ -14,21 +14,45 @@ const OrderProvider = ({ children }) => {
         isError: false,
         isLoading: false,
         message: "",
-        order: {},
+        orders: {},
     }
 
-    const [state, dispatch] = useReducer(orderReducer, initialState)
+    const [state, dispatch] = useReducer(orderReducer, initialState);
+
+
+    console.log("state", state);
 
     const createOrder = async (order) => {
-        const response =  await axios.post(`${BASE_URL}/api/v1/orders`, order);
+        const token = JSON.parse(localStorage.getItem("token")).token;
+        const response =  await axios.post(`${BASE_URL}/api/v1/orders`, order, {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        });
 
         console.log("response", response);
 
         dispatch({ type: "CREATE_ORDER", payload: response.data.data });
+
+        setTimeout(() => dispatch({ type: "RESET" }), 4000 );
+    }
+
+    const getOrder = async () => {
+        dispatch({ type: "SET_LOADING" });
+        const token = JSON.parse(localStorage.getItem("token")).token;
+        const response =  await axios.get(`${BASE_URL}/api/v1/orders`, {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        });
+
+        console.log("response", response);
+
+        dispatch({ type: "GET_ORDER", payload: response.data.data });
     }
 
     return (
-        <OrderContext.Provider value={{ isSuccess: state.isSuccess, isError: state.isError, isLoading: state.isLoading, message: state.message, order: state.order, createOrder }}>
+        <OrderContext.Provider value={{ ...state, createOrder, getOrder }}>
             { children }
         </OrderContext.Provider>
     );

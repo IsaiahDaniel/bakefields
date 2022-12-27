@@ -1,5 +1,4 @@
 const authReducer = (state, { type, payload }) => {
-  console.log("payload", payload);
   switch (type) {
     case "REGISTER_USER":
       return {
@@ -26,7 +25,7 @@ const authReducer = (state, { type, payload }) => {
         token: payload.token,
         user: payload.user,
         isLoading: false,
-        isSuccess: true
+        isSuccess: true,
       };
 
     case "LOGIN_ERROR":
@@ -36,7 +35,7 @@ const authReducer = (state, { type, payload }) => {
         user: null,
         isLoading: false,
         isError: true,
-        message: payload
+        message: payload,
       };
 
     case "LOGOUT":
@@ -45,6 +44,17 @@ const authReducer = (state, { type, payload }) => {
         token: null,
         user: null,
         isLoading: false,
+      };
+
+    case "RESET":
+      return {
+        ...state,
+        isSuccess: false,
+        isError: false,
+        isLoading: false,
+        message: "",
+        user: "",
+        token: null
       };
 
     case "SET_LOADING":
