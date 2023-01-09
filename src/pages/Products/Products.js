@@ -52,7 +52,7 @@ const Products = () => {
         {!products && <h3 className="text-center p-4">No Products yet.</h3>}
         {products &&
           products.map((product) => (
-            <div className="mb-10" key={product._id}>
+            <div className="mb-10 w-full" key={product._id}>
               <Product product={product} />
               <Link to={`/product/${product._id}`}>
                 <Button text="Order Now" />
