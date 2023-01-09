@@ -12,8 +12,9 @@ import { useEffect, useContext } from "react";
 import { ProductContext } from "../../context/productsContext/ProductsContext";
 import Spinner from "../../components/Spinner/Spinner";
 import { OrderContext } from "../../context/ordersContext/OrderContext";
-import { getProduct } from "../../context/productsContext/ProductsActions";
+import { getProduct, getProducts } from "../../context/productsContext/ProductsActions";
 import { toast } from "react-toastify";
+import Carousel from "react-elastic-carousel";
 // import { toast } from "react-toastify";
 // import Modal from "../../components/Modal/Modal";
 // import { AuthContext } from "../../context/authContext/AuthContext";
@@ -29,27 +30,35 @@ const Product = () => {
     message: "",
     details: "",
     quantity: "",
-    image: ""
+    image: "",
   });
   const [quantity, setQuantity] = useState(1);
-  const { product, isLoading, dispatch } =
-    useContext(ProductContext);
+  const { product, products, isLoading, dispatch } = useContext(ProductContext);
   const { createOrder, isSuccess } = useContext(OrderContext);
+
+  console.log("products", products);
 
   useEffect(() => {
     const singleProduct = async () => {
       const item = await getProduct(id);
       dispatch({ type: "GET_PRODUCT", payload: item.data.data });
-    }
+    };
 
     singleProduct();
 
-    if(isSuccess){
+    const getAllProducts = async () => {
+      const item = await getProducts();
+      dispatch({ type: "GET_PRODUCTS", payload: item.data.data });
+    }
+
+    getAllProducts();
+
+
+    if (isSuccess) {
       toast("Your order has been received");
     }
     // eslint-disable-next-line
   }, [isLoading, isSuccess]);
-
 
   const handleChange = (e) => {
     setInputs((prevState) => ({
@@ -77,6 +86,13 @@ const Product = () => {
     setQuantity(1);
   };
 
+  const breakPoints = [
+    { width: 1, itemsToShow: 1 },
+    { width: 550, itemsToShow: 2 },
+    { width: 768, itemsToShow: 3 },
+    { width: 1200, itemsToShow: 4 },
+  ];
+
   const renderBanner = () => {
     return (
       <div className="bg-[#F72238] p-5">
@@ -89,14 +105,13 @@ const Product = () => {
     return (
       <div className="mt-5 md:mt-10 mb-10 p-3 md:p-0">
         <div className="flex-col md:flex md:flex-row">
-          {/* <Modal /> */}
           <div className="flex-1 mx-auto">
             <img
               src={product.image}
               alt={product.name}
               // className="w-[600px] h-[600px] object-cover"
               style={{ width: "500px", height: "700px" }}
-              className="object-cover w-full"
+              className="object-contain w-full"
             />
           </div>
 
@@ -111,21 +126,32 @@ const Product = () => {
 
             {inputs.size === "20" && (
               <h3 className="text-2xl text-[#F72238]">
-                &#8358; {product.price_20}
+                &#8358; {product.price_10}
               </h3>
             )}
 
             {inputs.size === "30" && (
               <h3 className="text-2xl text-[#F72238]">
-                &#8358; {product.price_30}
+                &#8358; {product.price_12}
               </h3>
             )}
 
-            { localStorage.length === 0  ? (
+            {localStorage.length === 0 ? (
               <p className="bg-blue-400 p-3 text-white rounded-md mt-4">
-                Please login to complete your order, <br /> or call 0812764783 to complete it offline
+                Please login to complete your order, Or {" "}
+                <a
+                  href="https://wa.me/message/AKIABSVUJFMZJ1"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="font-bold text-[#FEBD01]"
+                >
+                  whatsApp us
+                </a>{" "}
+                <br /> or call 09159859661 to complete it offline
               </p>
-            ) : ""}
+            ) : (
+              ""
+            )}
 
             <form onSubmit={handleSubmit} className="mt-5">
               <div className="w-full">
@@ -139,13 +165,13 @@ const Product = () => {
                 >
                   <option>Choose a Cake Size</option>
                   <option value="10" onChange={(e) => handleChange(e)}>
-                    10"" ({product.price})
+                    8"" ({product.price})
                   </option>
                   <option value="20" onChange={(e) => handleChange(e)}>
-                    20"" ({product.price_20})
+                    10"" ({product.price_10})
                   </option>
                   <option value="30" onChange={(e) => handleChange(e)}>
-                    30"" ({product.price_30})
+                    12"" ({product.price_12})
                   </option>
                 </select>
               </div>
@@ -205,7 +231,7 @@ const Product = () => {
                 </span>
               </div>
 
-              { quantity }
+              {quantity}
 
               <div className="flex justify-center w-1/5 mt-6 pl-32">
                 {quantity >= 0 && (
@@ -243,7 +269,11 @@ const Product = () => {
                 </div>
               </div>
 
-              <Button text={"Place Order"} primaryInverse disabled={localStorage.length === 0} />
+              <Button
+                text={"Place Order"}
+                primaryInverse
+                disabled={localStorage.length === 0}
+              />
             </form>
             <div className="mt-10">
               <h3 className="text-2xl">Talk to us on Social</h3>
@@ -265,6 +295,27 @@ const Product = () => {
     );
   };
 
+  const renderCarousel = () => {
+    return (
+      <section className="my-[20px]">
+        <h1 className="text-3xl text-center mb-5">Similar Products</h1>
+        <div className="flex items-center md:justify-between justify-center">
+          <Carousel breakPoints={breakPoints} enableAutoPlay={true}>
+            {products?.map((product) => (
+              <img
+                src={product.image}
+                alt=""
+                key={product._id}
+                style={{ marginRight: "40px" }}
+                className="sm:w-full h-[300px] md:min-w-full object-contain"
+              />
+            ))}
+          </Carousel>
+        </div>
+      </section>
+    );
+  };
+
   return (
     <div>
       {renderBanner()}
@@ -272,6 +323,7 @@ const Product = () => {
         {isLoading && <Spinner />}
         {renderProductDetail()}
       </div>
+      { renderCarousel() }
     </div>
   );
 };
