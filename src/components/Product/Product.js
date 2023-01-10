@@ -15,7 +15,7 @@ const Product = ({ product }) => {
         />
       </div>
       <h3 className="font-bold">{product.name}</h3>
-      <h3 className="font-bold">Category: {product.category}</h3>
+      <h3 className="font-bold">Category: <span className="font-lighttt">{product.category}</span></h3>
       <Rating />
       <h3>&#8358;{product.price}</h3>
     </Link>

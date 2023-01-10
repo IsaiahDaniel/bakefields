@@ -231,8 +231,6 @@ const Product = () => {
                 </span>
               </div>
 
-              {quantity}
-
               <div className="flex justify-center w-1/5 mt-6 pl-32">
                 {quantity >= 0 && (
                   <div
@@ -301,7 +299,7 @@ const Product = () => {
         <h1 className="text-3xl text-center mb-5">Similar Products</h1>
         <div className="flex items-center md:justify-between justify-center">
           <Carousel breakPoints={breakPoints} enableAutoPlay={true}>
-            {products?.map((product) => (
+            {products?.slice(0, 5).map((product) => (
               <img
                 src={product.image}
                 alt=""
