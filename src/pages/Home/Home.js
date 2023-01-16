@@ -360,6 +360,19 @@ const Home = () => {
           { isLoading && <Spinner /> }
         </div> */}
           {ProductsList()}
+
+          <section className="w-[100%] md:w-[80%] mx-auto bg-[#DEF3F9] p-8 mb-10 flex-col-reverse md:flex md:flex-row-reverse items-center justify-between">
+            <img src={require("../../assets/delivery-1.png")} className="w-[100%] md:w-[50%] mb-10 md:mb-0" alt="" />
+            <div>
+              <h2 className="text-2xl leading-[70px] text-center md:text-left">Stay Home and get your Daily Needs from Our Shop</h2>
+              <Link to="/products">
+                <Button
+                  text={"Place Order"}
+                  primaryInverse
+                />
+              </Link>
+            </div>
+          </section>
         </div>
       </div>
     </>
