@@ -1,7 +1,8 @@
 import React from "react";
 import { BsArrowRight } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
-const Button = ({ text, primary, primaryInverse, inputType, iconButton, icon, light, disabled }) => {
+const Button = ({ text, primary, primaryInverse, inputType, iconButton, icon, light, to, disabled }) => {
   if (primary) {
     return (
       <button className="border border-[#6C63FF] text-[#6C63FF] rounded w-full p-5 mt-4 disabled:bg-slate-500" disabled={disabled}>
@@ -12,19 +13,19 @@ const Button = ({ text, primary, primaryInverse, inputType, iconButton, icon, li
 
   if(iconButton){
     return (
-    <div className="bg-[#F72238] hover:bg-[#fcb900]  pl-8 pr-8 pt-5 pb-5 text-white flex items-end justify-center">
+    <Link to={to} className="bg-[#F72238] hover:bg-[#fcb900]  pl-8 pr-8 pt-5 pb-5 text-white flex items-end justify-center">
       <button type={inputType} className="mr-3">{text}</button>
       { icon && <BsArrowRight size={20} /> }
-    </div>
+    </Link>
     )
   }
 
   if (light) {
     return (
-        <div  className="bg-white text-black pl-8 pr-8 pt-5 pb-5 flex items-end justify-center hover:bg-[#fcb900]">
+        <Link to={to} className="bg-white text-black pl-8 pr-8 pt-5 pb-5 flex items-end justify-center hover:bg-[#fcb900]">
             <button type={inputType} className="mr-3">{text}</button>
             { icon && <BsArrowRight size={20} color="#333" /> }
-        </div>
+        </Link>
     );
   }
 

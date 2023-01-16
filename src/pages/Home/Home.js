@@ -331,10 +331,10 @@ const Home = () => {
             pharetra bibendum justo quiscursus consectetur erat.
           </p>
           <div className="flex-col md:flex md:flex-row items-center md:mt-10 p-10 md:p-0 text-center">
-            <Button text="Get Started" iconButton icon />
+            <Button text="Get Started" to="/products" iconButton icon />
             <div className="mr-8"></div>
             <br />
-            <Button text="About Us" light icon />
+            <Button text="About Us" to="/about" light icon />
           </div>
         </div>
         </div>
