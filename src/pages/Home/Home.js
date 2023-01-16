@@ -321,7 +321,7 @@ const Home = () => {
     <>
       <section className="home__bg">
         <div className="container mx-auto flex flex-col items-center justify-start">
-        <div className="flex flex-col justify-center mt-10 md:mt-[150px] container mx-auto">
+        <div className="flex flex-col justify-center mt-10 md:mt-[150px] container mx-auto w-[100%]">
           <h1 className="text-4xl md:text-6xl text-white text-center md:text-left font-extrabold uppercase leading-relaxed p-10 md:p-0">
             Welcome to <br /> Midbite
           </h1>
