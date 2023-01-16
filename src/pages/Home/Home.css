@@ -1,8 +1,6 @@
-.showcase-bg {
-    background-image: url("../../assets/showcase-1.jpeg");
-    background-size: cover;
-    background-postion: center;
-    height: 400px;
+.home__bg {
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url("../../assets/home-hero-image.webp") center center/cover no-repeat;
+    height: 65vh;
 }
 
 .rec-arrow {

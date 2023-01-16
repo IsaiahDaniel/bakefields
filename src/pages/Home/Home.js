@@ -284,9 +284,9 @@ const Home = () => {
 
         {isLoading && <Spinner />}
 
-        <div className="grid grid-cols-2 gap-8 xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-3">
-          {products.map((product) => (
-            <div className="mb-10" key={product._id}>
+        <div className="grid grid-cols-1 gap-8 xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-3">
+          {products.slice(0,6).map((product) => (
+            <div className="shadow-lg p-5 mb-10" key={product._id}>
               <Product product={product} key={product.id} />
               <Button text="Order Now" />
             </div>
@@ -318,8 +318,29 @@ const Home = () => {
   };
 
   return (
-    <div className="container mx-auto pl-4 pr-4 pt-5">
-      <div className="md:hidden flex my-5 items-center rounded border border-[#FEBD01] pt-3 pb-3 w-full md:w-[400px]">
+    <>
+      <section className="home__bg">
+        <div className="container mx-auto flex flex-col items-center justify-start">
+        <div className="flex flex-col justify-center mt-10 md:mt-[150px] container mx-auto">
+          <h1 className="text-4xl md:text-6xl text-white text-center md:text-left font-extrabold uppercase leading-relaxed p-10 md:p-0">
+            Welcome to <br /> Midbite
+          </h1>
+          <p className="text-white md:mt-10 leading-relaxed text-center md:text-justify md:p-0 px-5">
+            Cras eu elit congue, placerat dui ut, tincidunt nislnulla leo elit,
+            <br />
+            pharetra bibendum justo quiscursus consectetur erat.
+          </p>
+          <div className="flex-col md:flex md:flex-row items-center md:mt-10 p-10 md:p-0 text-center">
+            <Button text="Get Started" iconButton icon />
+            <div className="mr-8"></div>
+            <br />
+            <Button text="About Us" light icon />
+          </div>
+        </div>
+        </div>
+      </section>
+      <div className="container mx-auto pl-4 pr-4 pt-5">
+        {/* <div className="md:hidden flex my-5 items-center rounded border border-[#FEBD01] pt-3 pb-3 w-full md:w-[400px]">
         <div className="mr-1 ml-2">
           <AiOutlineSearch />
         </div>
@@ -329,18 +350,19 @@ const Home = () => {
           className="bg-transparent outline-none w-full"
           placeholder="Search Cakes"
         />
-      </div>
+      </div> */}
 
-      {renderShowcase()}
+        {/* {renderShowcase()} */}
 
-      <div>
-        {renderCarousel()}
-        {/* <div className="my-5">
+        <div>
+          {renderCarousel()}
+          {/* <div className="my-5">
           { isLoading && <Spinner /> }
         </div> */}
-        {ProductsList()}
+          {ProductsList()}
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

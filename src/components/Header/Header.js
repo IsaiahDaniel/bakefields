@@ -25,7 +25,7 @@ const Header = () => {
             <Link to="/" className="w-[170px]">
               <img src={logo} alt="" style={{ width: "80%" }} />
             </Link>
-            <div className="md:flex items-center rounded border border-[#FEBD01] pt-3 pb-3 w-full md:w-[400px] hidden">
+            {/* <div className="md:flex items-center rounded border border-[#FEBD01] pt-3 pb-3 w-full md:w-[400px] hidden">
               <div className="mr-2 ml-2">
                 <AiOutlineSearch />
               </div>
@@ -38,7 +38,7 @@ const Header = () => {
             </div>
             <button className="border border-[#FEBD01] p-3 hidden md:flex hover:bg-[#FEBD01] rounded">
               Search
-            </button>
+            </button> */}
           </div>
 
           <ul className="hidden md:flex items-center justify-between">

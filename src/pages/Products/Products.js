@@ -49,11 +49,11 @@ const Products = () => {
       </div>
       <h2 className="text-4xl mb-6 text-center mt-5 md:p-0">Our cakes</h2>
       { isLoading && <Spinner /> }
-      <div className="grid grid-cols-2 gap-8 p-5 md:p-0 xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-3">
+      <div className="grid grid-cols-1 gap-8 p-5 md:p-0 xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-3">
         {!products && <h3 className="text-center p-4">No Products yet.</h3>}
         {products &&
           products.map((product) => (
-            <div className="mb-10 w-full" key={product._id}>
+            <div className="shadow-lg p-5 mb-10 w-full" key={product._id}>
               <Product product={product} />
               <Link to={`/product/${product._id}`}>
                 <Button text="Order Now" />
