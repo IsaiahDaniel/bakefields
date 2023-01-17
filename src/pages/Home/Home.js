@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { Button, Product } from "../../components";
 import Carousel from "react-elastic-carousel";
-import { AiOutlineSearch } from "react-icons/ai";
+// import { AiOutlineSearch } from "react-icons/ai";
 
 import { AiOutlineRight } from "react-icons/ai";
 import { FaBirthdayCake, FaChild, FaBreadSlice } from "react-icons/fa";
